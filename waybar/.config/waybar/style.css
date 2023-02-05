@@ -1,29 +1,19 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: IBMPlexSans, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 window#waybar {
     background-color: rgba(31, 31, 40, 0.5);
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #ffffff;
+    color: #DCD7BA;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: .9s;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -89,7 +79,8 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    background-color: #76946a;
+    color: #dcd7ba;
 }
 
 #window,
@@ -108,12 +99,13 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: #363646;
+    color: #dcd7ba;
 }
 
 #battery {
     background-color: #ffffff;
-    color: #000000;
+    color: #dcd7ba;
 }
 
 #battery.charging, #battery.plugged {
@@ -156,7 +148,8 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: #957FB8;
+    color: #DCD7BA;
 }
 
 #network {
@@ -165,11 +158,12 @@ label:focus {
 
 #network.disconnected {
     background-color: #f53c3c;
+    color: #DCD7BA;
 }
 
 #pulseaudio {
     background-color: #f1c40f;
-    color: #000000;
+    color: #DCD7BA;
 }
 
 #pulseaudio.muted {
@@ -178,22 +172,24 @@ label:focus {
 }
 
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
+    background-color: #727169;
+    color: #DCD7BA;
 }
 
 #wireplumber.muted {
     background-color: #f53c3c;
+    color: #DCD7BA;
 }
 
 #custom-media {
     background-color: #66cc99;
-    color: #2a5c45;
+    color: #DCD7BA;
     min-width: 100px;
 }
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
+    color: #DCD7BA;
 }
 
 #custom-media.custom-vlc {
@@ -210,6 +206,7 @@ label:focus {
 
 #tray {
     background-color: #2980b9;
+    color: #DCD7BA;
 }
 
 #tray > .passive {
@@ -231,20 +228,23 @@ label:focus {
 }
 
 #mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+    color: #DCD7BA;
+    background-color: #43242B;
 }
 
 #mpd.disconnected {
-    background-color: #f53c3c;
+    color: #DCD7BA;
+    background-color: #43242B;
 }
 
 #mpd.stopped {
-    background-color: #90b1b1;
+    color: #DCD7BA;
+    background-color: #43242B;
 }
 
 #mpd.paused {
-    background-color: #51a37a;
+    color: #DCD7BA;
+    background-color: #43242B;
 }
 
 #language {

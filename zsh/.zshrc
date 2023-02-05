@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="lvim"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,9 +98,14 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="${EDITOR} ~/.zshrc"
+alias insconfig="${EDITOR} ~/dotfiles/install.sh"
+alias hyprconfig="${EDITOR} ~/.config/hypr/hyprland.conf"
+alias barconfig="${EDITOR} ~/.config/waybar/config"
+alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 path+=($HOME/.local/bin)
+path+=($HOME/.cargo/env)
+path+=($HOME/.cargo/bin)
