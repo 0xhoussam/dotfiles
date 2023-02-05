@@ -13,10 +13,21 @@ yay -S --needed stow hyprland alacritty pipewire  pipewire-alsa pipewire-audio w
   ranger udisks2 axel
 
 # disable touch screen
-FILE=/etc/mkinitcpio.d/hid_multitouch.conf
-if [ ! -f "$FILE" ]; then
-	sudo touch "$FILE"
-	sudo echo 'blacklist hid_multitouch' > "$FILE"
+FILETOUCH=/etc/mkinitcpio.d/hid_multitouch.conf
+if [ ! -f "$FILETOUCH" ]; then
+	sudo touch "$FILETOUCH"
+	sudo echo 'blacklist hid_multitouch' > "$FILETOUCH"
+else
+    echo "${FILETOUCH} already exists"
+fi
+
+
+DIRPACKER=/home/$USER/.local/share/nvim/site/pack/packer/start/packer.nvim
+if [ ! -d "$DIRPACKER" ]; then
+	sudo touch "$DIRPACKER"
+	sudo echo 'blacklist hid_multitouch' > "$DIRPACKER"
+else
+    echo "packer already installed"
 fi
 
 if ! command -v volta &> /dev/null
@@ -24,6 +35,8 @@ then
 	curl https://get.volta.sh | bash
 	source ~/.zshrc
 	volta install node
+else
+  echo "volta already installed"
 fi
 
 sudo systemctl enable bluetooth.service
