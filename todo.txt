@@ -1,1 +1,2 @@
 - [ ] make start script run in install script
+- [ ] add readme

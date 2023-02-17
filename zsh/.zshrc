@@ -98,11 +98,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias ls=exa
 alias zshconfig="${EDITOR} ~/.zshrc"
 alias insconfig="${EDITOR} ~/dotfiles/install.sh"
 alias hyprconfig="${EDITOR} ~/.config/hypr/hyprland.conf"
 alias barconfig="${EDITOR} ~/.config/waybar/config"
 alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
+alias alacrittyconf="${EDITOR} ~/.config/alacritty/alacritty.yml"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 

@@ -3,7 +3,8 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["wlr/window"],
-    "modules-right": ["mpd", "idle_inhibitor", "wireplumber", "network", "backlight", "clock", "tray"],
+    /* "modules-right": ["mpd", "idle_inhibitor", "wireplumber", "network", "backlight", "clock", "tray"], */
+    "modules-right": ["clock", "tray"],
      "wlr/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
