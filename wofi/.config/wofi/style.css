@@ -1,0 +1,56 @@
+window {
+margin: 0px;
+border: 2px solid #161616;
+border-radius: 15px;
+background-color: #262626;
+font-family: Inter, mononoki Nerd Font, "Font Awesome 5 free";
+font-size: 14px;
+}
+
+#input {
+margin: 5px;
+border: 1px solid #161616;
+border-radius: 15px;
+color: #f4f4f4;
+background-color: #161616;
+}
+
+#input image {
+	color: #f4f4f4;
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+background-color: #262626;
+}
+
+#outer-box {
+margin: 5px 5px;
+border: none;
+background-color: #262626;
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #f4f4f4;
+} 
+
+#entry:selected {
+	background-color: #491d8b;
+	color: #f4f4f4;
+	font-weight: normal;
+	border-radius: 15px;
+}
+
+#text:selected {
+	background-color: #491d8b;
+	color: #f4f4f4;
+	font-weight: normal;
+}
