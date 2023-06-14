@@ -21,6 +21,7 @@ set $browser firefox
 set $lockman exec bash ~/.local/bin/lockman.sh
 set $menu wofi --hide-scroll | xargs swaymsg exec --
 
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -29,7 +30,7 @@ set $menu wofi --hide-scroll | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/pride/Pictures/wallpapers/tanjiro.png fill
+output * bg /home/pride/pictures/wallpapers/tanjiro.png fill
 #
 # Example configuration:
 #
@@ -46,6 +47,9 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
+
+exec_always /home/pride/.local/bin/import-gsettings
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -85,8 +89,9 @@ exec swayidle -w \
     # Lock window
     bindsym $mod+Shift+q exec $lockman
 
-    # Launche Menu
-
+    # Screenshot
+    bindsym Shift+BracketRight exec grim - | swappy -f -
+    bindsym Shift+BracketLeft exec grim -g "$(slurp)" - | swappy -f -
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -245,9 +250,9 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-# bindsym XF86Search exec $menu
+bindsym XF86Search exec $menu
 
 # xwayland disable
 
 # window rules
-for_window [class="Dunst"] floating enable
+for_window [class="Mako"] floating enable

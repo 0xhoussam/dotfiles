@@ -70,7 +70,15 @@ ZSH_THEME="afowler"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git
+  colored-man-pages
+  docker
+  docker-compose
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  fast-syntax-highlighting
+  # zsh-autocomplete
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,6 +113,8 @@ alias alacrittyconfig='$EDITOR $HOME/.config/alacritty/alacritty.yml'
 alias swayconfig='$EDITOR $HOME/.config/sway/config'
 alias installscript='$EDITOR $HOME/dotfiles/install.sh'
 alias ls='exa --icons'
+alias bat='bat --theme=ansi'
+alias less='less --use-color'
 
 # SOURCE
 source "$HOME/.cargo/env"
@@ -112,6 +122,6 @@ source "$HOME/.cargo/env"
 # PATH
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+# export PAGER="most"
 path+=($HOME/.local/bin)
-
-# export DRI_PRIME=1
+export DRI_PRIME=1

@@ -23,7 +23,8 @@ yay -S --needed stow alacritty firefox unzip zsh exa bat neovide \
   man-pages man-db waybar ttf-font-awesome zathura zathura-pdf-mupdf \
   brightnessctl bluez bluez-utils mako libnotify remind imv mpv swaybg \
   gcc make valgrind g++ swayidle swaylock-effects intel-ucode mesa \
-  vulkan-radeon openssh wl-clipboard wofi
+  vulkan-radeon openssh wl-clipboard wofi vulkan-intel xdg-utils \
+  zathura-cb zathura-djvu grim slurp swappy xdg-desktop-portal
 
 # rust
 
@@ -47,5 +48,6 @@ then
 yes | bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 fi
 
+mkdir -p ~/.local/bin
 
 ls -d */ | xargs stow
