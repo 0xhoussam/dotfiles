@@ -24,7 +24,8 @@ yay -S --needed stow alacritty firefox unzip zsh exa bat neovide \
   brightnessctl bluez bluez-utils mako libnotify remind imv mpv swaybg \
   gcc make valgrind g++ swayidle swaylock-effects intel-ucode mesa \
   vulkan-radeon openssh wl-clipboard wofi vulkan-intel xdg-utils \
-  zathura-cb zathura-djvu grim slurp swappy xdg-desktop-portal
+  zathura-cb zathura-djvu grim slurp swappy xdg-desktop-portal \
+  qt5-wayland qt6-wayland
 
 # rust
 

@@ -119,9 +119,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: BlexMono Nerd Font
+    # family: BlexMono Nerd Font
     #family: JetBrainsMono Nerd Font
     #family: VictorMono Nerd Font
+    family: Iosevka Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -133,9 +134,10 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: JetBrainsMono Nerd Font
-    family: VictorMono Nerd Font
+    # family: VictorMono Nerd Font
     # family: BlexMono Nerd Font 
     # family: UbuntuNerdFont 
+    family: Iosevka Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -169,7 +171,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

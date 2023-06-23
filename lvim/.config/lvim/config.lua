@@ -1,6 +1,6 @@
-vim.opt.cmdheight = 2                      -- more space in the neovim command line for displaying messages
-vim.opt.guifont = "BlexMono Nerd Font:h10" -- the font used in graphical neovim applications
-vim.opt.relativenumber = true              -- relative line numbers
+vim.opt.cmdheight = 2                     -- more space in the neovim command line for displaying messages
+vim.opt.guifont = "Iosevka Nerd Font:h10" -- the font used in graphical neovim applications
+vim.opt.relativenumber = true             -- relative line numbers
 
 lvim.colorscheme = "oxocarbon"
 -- vim.cmd('set termguicolors')
