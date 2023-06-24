@@ -25,7 +25,7 @@ yay -S --needed stow alacritty firefox unzip zsh exa bat neovide \
   gcc make valgrind g++ swayidle swaylock-effects intel-ucode mesa \
   vulkan-radeon openssh wl-clipboard wofi vulkan-intel xdg-utils \
   zathura-cb zathura-djvu grim slurp swappy xdg-desktop-portal \
-  qt5-wayland qt6-wayland
+  qt5-wayland qt6-wayland kitty
 
 # rust
 
@@ -44,10 +44,6 @@ fi
 
 # Lunarvim
 
-if ! command -v lvim &> /dev/null
-then
-yes | bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-fi
 
 mkdir -p ~/.local/bin
 

@@ -75,7 +75,7 @@ plugins=(git
   docker
   docker-compose
   zsh-autosuggestions
-  zsh-syntax-highlighting
+  # zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-vi-mode
   # zsh-autocomplete

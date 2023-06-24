@@ -33,8 +33,9 @@ set $menu wofi --hide-scroll | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/pride/pictures/wallpapers/1315631.png fill
+output * bg /home/pride/Pictures/wallpapers/1109233.jpg fill
 exec dbus-update-activation-environment --systemd --all
+
 #
 # Example configuration:
 #
@@ -68,6 +69,7 @@ exec swayidle -w \
       natural_scroll enabled
       middle_emulation enabled
   }
+  input "1267:903:ELAN_Touchscreen" events disabled
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -263,3 +265,5 @@ for_window [class="Mako"] floating enable
 seat * {
   hide_cursor when-typing enable
 }
+
+exec systemctl --user import-environment
