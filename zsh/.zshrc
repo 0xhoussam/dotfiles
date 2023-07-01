@@ -126,3 +126,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # export PAGER="most"
 path+=($HOME/.local/bin)
 export DRI_PRIME=1
+
+
+alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark \
+&& gsettings set org.gnome.desktop.interface color-scheme prefer-dark'

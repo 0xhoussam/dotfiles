@@ -1,88 +1,80 @@
 * {
-    border: none;
     border-radius: 0;
-    font-family: Inter, VictorMono Nerd Font, mononoki Nerd Font, "Font Awesome 5 free";
-    font-size: 16px;
+    font-family: SFMono Nerd Font Mono,mononoki Nerd Font, "Font Awesome 5 free";
+    font-size: 12pt;
     min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    /* color: white; */
+    background: #1E1E28;
+    color: #DADAE8;
 }
 
 tooltip {
-	background: #0f0f0f;
+	background: #1E1E28;
 	border-radius: 15px;
 	border-width: 2px;
 	border-style: solid;
-	border-color: #262626;
+	border-color: #a4b9ef;
+	}
+
+#workspaces {
+    background: #332E41;
+    margin-left: 5px;
 }
 
 #workspaces button {
-    padding: 5px 10px;
-    color: #ffffff;
+    padding: 0px 6px;
+    min-width: 0;
+    color: #DADAE8;
 }
 
 #workspaces button.focused {
-    color: #ffffff;
-    background-color: #491d8b;
-    border-radius: 15px;
+    color: #A4B9EF;
 }
 
 #workspaces button.urgent {
-    border-radius: 15px;
-	  background-color: #d4bbff;
-	  color: #161616;
+    color: #F9C096;
 }
 
 #workspaces button:hover {
-	background-color: #d4bbff;
-	color: #161616;
-	border-radius: 15px;
+    background: #332e41;
+    border-color: #332e41;
+	color: #A4B9EF;
 }
 
-#workspaces {
-	background-color: #262626;
-	border-radius: 15px 0px 0px 15px;
-}
-
-#custom-date, #clock, #battery, #pulseaudio, #network, #workspaces {
-	background-color: #161616;
-	padding: 5px 10px;
-	margin: 5px 0px;
-}
-
-#custom-date {
-	color: #08bdba;
-  font-family: Inter;
-}
-
-#clock {
-    color: #08bdba;
-    border-radius: 0px 15px 15px 0px;
-    margin-right: 10px;
-}
-
-#battery {
-    color: #a6c8ff;
-}
-
-#battery.charging {
-    color: #33b1ff;
-}
-
-#battery.warning:not(.charging) {
-    background-color: #c49ea0;
-    color: #0f0f0f;
+#clock, #battery, #pulseaudio, #workspaces, #mpd  {
+	padding: 2px 10px;
+    background: #332E41;
 }
 
 #network {
-	color: #ff8389;
-	border-radius: 0px 0px 0px 0px;
+    padding-left: 15px;
+    padding-right: 2px;
+    background: #332E41;
+    border-radius: 15px 0px 0px 15px;
 }
 
-#pulseaudio {
-	color: #be95ff;
+#custom-vpn {
+    background: #332E41;
+    padding-right: 10px;
 }
 
+#backlight {
+    background: #332E41;
+    padding-right: 10px;
+  padding-left: 5px;
+}
+
+#clock {
+    padding-right: 15px;
+    margin-right: 5px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+#custom-spotify {
+    background: #332E41;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+}

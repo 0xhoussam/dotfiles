@@ -2,7 +2,7 @@
 
 alias refreshenv="bash;exit"
 
-sudo pacman -Syu --needed git vim neovim base-devel
+sudo pacman -Syu --needed git base-devel
 
 # yay
 
@@ -12,20 +12,14 @@ then
 	cd -
 fi
 
-# window manager
-
-sudo pacman -S --needed sway
-
-# utility
-
-yay -S --needed stow alacritty firefox unzip zsh exa bat neovide \
+yay -S --needed sway stow alacritty firefox unzip zsh exa bat neovide \
 	python gtk4 gtk3 sassc glib2 gdk-pixbuf2 adwaita-dark darkman \
   man-pages man-db waybar ttf-font-awesome zathura zathura-pdf-mupdf \
   brightnessctl bluez bluez-utils mako libnotify remind imv mpv swaybg \
   gcc make valgrind g++ swayidle swaylock-effects intel-ucode mesa \
   vulkan-radeon openssh wl-clipboard wofi vulkan-intel xdg-utils \
   zathura-cb zathura-djvu grim slurp swappy xdg-desktop-portal \
-  qt5-wayland qt6-wayland kitty
+  qt5-wayland qt6-wayland kitty htop vim neovim pcmanfm-gtk3
 
 # rust
 
@@ -42,9 +36,5 @@ then
 	curl https://get.volta.sh | bash && refrechenv && volta install node
 fi
 
-# Lunarvim
-
-
 mkdir -p ~/.local/bin
-
 ls -d */ | xargs stow
