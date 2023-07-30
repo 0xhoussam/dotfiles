@@ -1,30 +1,29 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrainsMono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: Mononoki Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
 }
 
 window#waybar {
-    /* background-color: rgba(31, 31, 40, 0.5); */
-    background-color: rgba(0, 0, 0, 0);
-    color: #cfc9c2;
+    background-color: #161616;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    color: #f4f4f4;
     transition-property: background-color;
-    transition-duration: .9s;
-    margin: 10px 0px 0px 0px;
+    transition-duration: .5s;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-window#waybar.termite {
-    background-color: #3F3F3F;
+/*
+window#waybar.empty {
+    background-color: transparent;
 }
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+window#waybar.solo {
+    background-color: #FFFFFF;
 }
+*/
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -40,20 +39,10 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces button:first-child {
-  margin: 0px 0px 0px 20px;
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-}
-#workspaces button:last-child {
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-}
-
 #workspaces button {
-    padding: 5px 10px;
-    background-color: #24283b;
-    color: #cfc9c2;
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
 }
 
 #workspaces button:hover {
@@ -91,8 +80,8 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
-    background-color: #76946a;
-    color: #dcd7ba;
+    color: #f4f4f4;
+    background-color: #161616;
 }
 
 #window,
@@ -111,18 +100,12 @@ button:hover {
 }
 
 #clock {
-    background-color: #1a1b26;
-    color: #cfc9c2;
-    border-top-left-radius: 9999px;
-    border-bottom-left-radius: 9999px;
-    border-top-right-radius: 9999px;
-    border-bottom-right-radius: 9999px;
-    padding: 0px 15px;
+    background-color: #161616;
 }
 
 #battery {
     background-color: #ffffff;
-    color: #dcd7ba;
+    color: #000000;
 }
 
 #battery.charging, #battery.plugged {
@@ -165,8 +148,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: #957FB8;
-    color: #DCD7BA;
+    background-color: #90b1b1;
 }
 
 #network {
@@ -175,12 +157,11 @@ label:focus {
 
 #network.disconnected {
     background-color: #f53c3c;
-    color: #DCD7BA;
 }
 
 #pulseaudio {
     background-color: #f1c40f;
-    color: #DCD7BA;
+    color: #000000;
 }
 
 #pulseaudio.muted {
@@ -189,24 +170,22 @@ label:focus {
 }
 
 #wireplumber {
-    background-color: #727169;
-    color: #DCD7BA;
+    background-color: #fff0f5;
+    color: #000000;
 }
 
 #wireplumber.muted {
     background-color: #f53c3c;
-    color: #DCD7BA;
 }
 
 #custom-media {
     background-color: #66cc99;
-    color: #DCD7BA;
+    color: #2a5c45;
     min-width: 100px;
 }
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
-    color: #DCD7BA;
 }
 
 #custom-media.custom-vlc {
@@ -223,7 +202,6 @@ label:focus {
 
 #tray {
     background-color: #2980b9;
-    color: #DCD7BA;
 }
 
 #tray > .passive {
@@ -245,23 +223,20 @@ label:focus {
 }
 
 #mpd {
-    color: #DCD7BA;
-    background-color: #43242B;
+    background-color: #66cc99;
+    color: #2a5c45;
 }
 
 #mpd.disconnected {
-    color: #DCD7BA;
-    background-color: #43242B;
+    background-color: #f53c3c;
 }
 
 #mpd.stopped {
-    color: #DCD7BA;
-    background-color: #43242B;
+    background-color: #90b1b1;
 }
 
 #mpd.paused {
-    color: #DCD7BA;
-    background-color: #43242B;
+    background-color: #51a37a;
 }
 
 #language {

@@ -1,3 +1,4 @@
+#
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
@@ -68,7 +69,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1
+  opacity: 0.98
 
   # Startup Mode (changes require restart)
   #
@@ -82,7 +83,7 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  #title: Alacritty
+  title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
@@ -120,10 +121,13 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     # family: BlexMono Nerd Font
-    family: JetBrainsMono Nerd Font
+    #family: JetBrainsMono Nerd Font
+    #family: VictorMono Nerd Font
+    # family: Iosevka Nerd Font
+    family: SFMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    style: Meduim
 
   # Bold font face
   bold:
@@ -131,8 +135,12 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: BlexMono Nerd Font
-    family: JetBrainsMono Nerd Font
+    #family: JetBrainsMono Nerd Font
+    # family: VictorMono Nerd Font
+    # family: BlexMono Nerd Font 
+    # family: UbuntuNerdFont 
+    # family: Iosevka Nerd Font
+    family: SFMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -144,7 +152,10 @@ font:
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: BlexMono Nerd Font
-    family: JetBrainsMono Nerd Font
+    #family: JetBrainsMono Nerd Font
+    # family: VictorMono Nerd Font
+    # family: BlexMono Nerd Font 
+    family: SFMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -156,13 +167,16 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: BlexMono Nerd Font
-    family: JetBrainsMono Nerd Font
+    #family: JetBrainsMono Nerd Font
+    # family: VictorMono Nerd Font
+    # family: BlexMono Nerd Font 
+    family: SFMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -904,32 +918,33 @@ shell:
   # Highlight window damage information.
   #highlight_damage: false
 
-# Colors (Tokyo Night)
-# Source: https://github.com/zatchheems/tokyo-night-alacritty-theme
 colors:
-  # Default colors
   primary:
-    background: '0x1a1b26'
-    foreground: '0xa9b1d6'
-
-  # Normal colors
+    background: "#161616"
+    foreground: "#f4f4f4"
+  search:
+    matches:
+      foreground: CellBackground
+      background: '#ee5396'
+    footer_bar:
+      background: '#262626'
+      foreground: '#ffffff'
   normal:
-    black:   '0x32344a'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xad8ee6'
-    cyan:    '0x449dab'
-    white:   '0x787c99'
-
-  # Bright colors
+    black: "#262626"
+    magenta: "#ff7eb6"
+    green: "#42be65"
+    yellow: "#ffe97b"
+    blue: "#33b1ff"
+    red: "#ee5396"
+    cyan: "#3ddbd9"
+    white: "#dde1e6"
   bright:
-    black:   '0x444b6a'
-    red:     '0xff7a93'
-    green:   '0xb9f27c'
-    yellow:  '0xff9e64'
-    blue:    '0x7da6ff'
-    magenta: '0xbb9af7'
-    cyan:    '0x0db9d7'
-    white:   '0xacb0d0'
+    black: "#393939"
+    magenta: "#ff7eb6"
+    green: "#42be65"
+    yellow: "#ffe97b"
+    blue: "#33b1ff"
+    red: "#ee5396"
+    cyan: "#3ddbd9"
+    white: "#ffffff"
+  white: "#ffffff"

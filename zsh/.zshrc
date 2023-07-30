@@ -3,7 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR="lvim"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,7 +70,16 @@ ZSH_THEME="afowler"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git
+  colored-man-pages
+  docker
+  docker-compose
+  zsh-autosuggestions
+  # zsh-syntax-highlighting
+  fast-syntax-highlighting
+  zsh-vi-mode
+  # zsh-autocomplete
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,11 +91,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,18 +104,29 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+
+export EDITOR='lvim'
+
 # Example aliases
-alias ls=exa
-alias zshconfig="${EDITOR} ~/.zshrc"
-alias insconfig="${EDITOR} ~/dotfiles/install.sh"
-alias hyprconfig="${EDITOR} ~/.config/hypr/hyprland.conf"
-alias barconfig="${EDITOR} ~/.config/waybar/config"
-alias ohmyzsh="${EDITOR} ~/.oh-my-zsh"
-alias alacrittyconf="${EDITOR} ~/.config/alacritty/alacritty.yml"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias alacrittyconfig='$EDITOR $HOME/.config/alacritty/alacritty.yml'
+alias swayconfig='$EDITOR $HOME/.config/sway/config'
+alias installscript='$EDITOR $HOME/dotfiles/install.sh'
+alias ls='exa --icons'
+alias bat='bat --theme=ansi'
+alias less='less --use-color'
+
+# SOURCE
+source "$HOME/.cargo/env"
+
+# PATH
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
+# export PAGER="most"
 path+=($HOME/.local/bin)
-path+=($HOME/.cargo/env)
-path+=($HOME/.cargo/bin)
+export DRI_PRIME=1
+
+
+alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark \
+&& gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
