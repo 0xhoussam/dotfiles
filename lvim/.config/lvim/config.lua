@@ -1,8 +1,8 @@
-vim.opt.cmdheight = 2                         -- more space in the neovim command line for displaying messages
-vim.opt.guifont = "SFMono Nerd Font Mono:h13" -- the font used in graphical neovim applications
-vim.opt.relativenumber = true                 -- relative line numbers
+vim.opt.cmdheight = 2                                  -- more space in the neovim command line for displaying messages
+vim.opt.guifont = "InputMonoCompressed Nerd Font:h16" -- the font used in graphical neovim applications
+vim.opt.relativenumber = true                          -- relative line numbers
 
-lvim.colorscheme = "oxocarbon"
+lvim.colorscheme = "fleet"
 vim.cmd('set termguicolors')
 vim.opt.background = "dark" -- set this to dark or light
 lvim.format_on_save.enabled = true
@@ -24,41 +24,9 @@ lvim.plugins = {
       })
     end,
   },
-  {
-    "nvim-neorg/neorg",
-    ft = "norg",   -- lazy-load on filetype
-    config = true, -- run require("neorg").setup()
-  },
-  { 'Mofiqul/vscode.nvim' },
-  { 'Yazeed1s/minimal.nvim' },
   { 'andweeb/presence.nvim' },
-  { 'isobit/vim-darcula-colors' },
-  { "briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim" },
-  {
-    "tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
   { 'nyoom-engineering/oxocarbon.nvim' },
-  {
-    'vermdeep/darcula_dark.nvim',
-    lazy = false,
-    priority = 1002,
-    config = function(_, opts)
-      -- enable colorscheme
-      vim.cmd 'set termguicolors'
-      vim.cmd([[colorscheme darcula_dark]])
-    end
-  },
-  {
-    'rktjmp/lush.nvim',
-    lazy = false,
-    priority = 1000,
-    dependencies = {
-      'vermdeep/darcula_dark.nvim'
-    },
-  },
+  { 'felipeagc/fleet-theme-nvim' }
 }
 
 -- Neovide

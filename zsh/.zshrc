@@ -75,10 +75,8 @@ plugins=(git
   docker
   docker-compose
   zsh-autosuggestions
-  # zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-vi-mode
-  # zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='lvim'
 fi
 
 # Compilation flags
@@ -125,7 +123,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 # export PAGER="most"
 path+=($HOME/.local/bin)
-export DRI_PRIME=1
+path+=(/home/pride/.dvm/bin)
 
 
 alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark \
