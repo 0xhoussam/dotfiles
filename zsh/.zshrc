@@ -124,7 +124,10 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # export PAGER="most"
 path+=($HOME/.local/bin)
 path+=(/home/pride/.dvm/bin)
+path+=(/home/pride/go/bin)
 
 
 alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark \
 && gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
+
+alias z='zellij'

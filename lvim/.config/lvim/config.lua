@@ -1,6 +1,6 @@
-vim.opt.cmdheight = 2                                  -- more space in the neovim command line for displaying messages
-vim.opt.guifont = "InputMonoCompressed Nerd Font:h16" -- the font used in graphical neovim applications
-vim.opt.relativenumber = true                          -- relative line numbers
+vim.opt.cmdheight = 2                    -- more space in the neovim command line for displaying messages
+vim.opt.guifont = "SFMono Nerd Font:h13" -- the font used in graphical neovim applications
+vim.opt.relativenumber = true            -- relative line numbers
 
 lvim.colorscheme = "fleet"
 vim.cmd('set termguicolors')
@@ -26,7 +26,10 @@ lvim.plugins = {
   },
   { 'andweeb/presence.nvim' },
   { 'nyoom-engineering/oxocarbon.nvim' },
-  { 'felipeagc/fleet-theme-nvim' }
+  { 'felipeagc/fleet-theme-nvim' },
+  { 'gmr458/vscode_dark_modern.nvim' },
+  { 'martinsione/darkplus.nvim' },
+  { "ellisonleao/glow.nvim",           config = true, cmd = "Glow" },
 }
 
 -- Neovide

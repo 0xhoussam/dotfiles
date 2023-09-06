@@ -914,7 +914,7 @@ shell:
   #   - glsl3
   #   - gles2
   #   - gles2_pure
-  renderer: glsl3
+renderer: glsl3
 
   # Print all received window events.
   #print_events: false
@@ -922,63 +922,32 @@ shell:
   # Highlight window damage information.
   #highlight_damage: false
 
-# colors:
-#   primary:
-#     background: "#161616"
-#     foreground: "#f4f4f4"
-#   search:
-#     matches:
-#       foreground: CellBackground
-#       background: '#ee5396'
-#     footer_bar:
-#       background: '#262626'
-#       foreground: '#ffffff'
-#   normal:
-#     black: "#262626"
-#     magenta: "#ff7eb6"
-#     green: "#42be65"
-#     yellow: "#ffe97b"
-#     blue: "#33b1ff"
-#     red: "#ee5396"
-#     cyan: "#3ddbd9"
-#     white: "#dde1e6"
-#   bright:
-#     black: "#393939"
-#     magenta: "#ff7eb6"
-#     green: "#42be65"
-#     yellow: "#ffe97b"
-#     blue: "#33b1ff"
-#     red: "#ee5396"
-#     cyan: "#3ddbd9"
-#     white: "#ffffff"
-#   white: "#ffffff"
-
 colors:
   primary:
-    background: "#161616"
-    foreground: "#f4f4f4"
+    background: "#181818"
+    foreground: "#d6d6dd"
   search:
     matches:
-      foreground: CellBackground
-      background: '#ee5396'
+      foreground: "#181818"
+      background: '#52a7f6'
     footer_bar:
-      background: '#262626'
+      background: '#292929'
       foreground: '#ffffff'
   normal:
-    black: "#262626"
-    magenta: "#ff7eb6"
-    green: "#42be65"
-    yellow: "#ffe97b"
-    blue: "#33b1ff"
-    red: "#ee5396"
-    cyan: "#3ddbd9"
-    white: "#dde1e6"
+    black: "#535353"
+    magenta: "#a390f0"
+    green: "#afcb85"
+    yellow: "#e5c995"
+    blue: "#52a7f6"
+    red: "#CC7C8A"
+    cyan: "#78d0bd"
+    white: "#6d6d6d"
   bright:
-    black: "#393939"
-    magenta: "#ff7eb6"
-    green: "#42be65"
-    yellow: "#ffe97b"
-    blue: "#33b1ff"
-    red: "#ee5396"
+    black: "#898989"
+    magenta: "#d898d8"
+    green: "#00AF99"
+    yellow: "#DEA407"
+    blue: "#2197F3"
+    red: "#F44747"
     cyan: "#3ddbd9"
     white: "#ffffff"

@@ -83,3 +83,5 @@ opt.mouse = "a"
 -- Map <leader> to space
 g.mapleader = " "
 g.maplocalleader = " "
+
+vim.opt.guifont = { "SFMono Nerd Font", "h14" }
