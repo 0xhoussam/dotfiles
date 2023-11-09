@@ -6,10 +6,10 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-# font_family        InputMonoCondensed Light
-# bold_font          InputMonoCondensed Regular
-# italic_font        InputMonoCondensed Italic
-# bold_italic_font    InputMonoCondensed Regular Italic
+font_family        InputMonoCondensed Light
+bold_font          InputMonoCondensed Regular
+italic_font        InputMonoCondensed Italic
+bold_italic_font    InputMonoCondensed Regular Italic
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -19,11 +19,11 @@
 #: heavy. Setting them manually is useful for font families that have
 #: many weight variants like Book, Medium, Thick, etc. For example::
 
-:     font_family       FiraMono Nerd Font
-:      Regular          FiraMono Nerd Font Light
-:      Medium           FiraMono Nerd Font Light
-:     italic_font       FiraMono Nerd Font Light Italic
-:     bold_italic_font  FiraMono Nerd Font Medium Italic
+# #:     font_family      Operator Mono Book
+# :      Regular          FiraMono Nerd Font Light
+# :      Medium           FiraMono Nerd Font Light
+# #:     italic_font      Operator Mono Book Italic
+# #:     bold_italic_font Operator Mono Medium Italic
 
 # font_size 11.0
 
@@ -76,7 +76,7 @@
 
 #:     narrow_symbols codepoints [optionally the number of cells]
 
-disable_ligatures never
+# disable_ligatures never
 
 #: Choose how you want to handle multi-character ligatures. The
 #: default is to always render them. You can tell kitty to not render
@@ -670,7 +670,7 @@ disable_ligatures never
 #: in full screen programs that redraw the entire screen on each loop,
 #: because kitty is so fast that partial screen updates will be drawn.
 
-sync_to_monitor yes
+# sync_to_monitor yes
 
 #: Sync screen updates to the refresh rate of the monitor. This
 #: prevents screen tearing
@@ -1517,7 +1517,8 @@ sync_to_monitor yes
 #: }}}
 
 #: OS specific tweaks {{{
-# wayland_titlebar_color background
+
+wayland_titlebar_color background
 
 #: The color of the kitty window's titlebar on Wayland systems with
 #: client side window decorations such as GNOME. A value of system
@@ -2389,8 +2390,11 @@ map ctrl+cmd+f    toggle_fullscreen
 #: }}}
 
 #: }}}
+
+
 background #1f1f1f
 foreground #cccccc
+
 color0 #181818
 color1 #ff0000
 color2 #2ea043
@@ -2399,6 +2403,7 @@ color4 #0078d4
 color5 #d16d9e
 color6 #04395e
 color7 #9cdcfe
+
 color8 #2a2a2a
 color9 #9e4434
 color10 #329171
@@ -2408,11 +2413,3 @@ color13 #c586c0
 color14 #0e639c
 color15 #264f78
 
-
-
-# BEGIN_KITTY_THEME
-# Catppuccin-Mocha
-# include current-theme.conf
-# END_KITTY_THEME
-wayland_titlebar_color #1f1f1f
-linux_display_server auto

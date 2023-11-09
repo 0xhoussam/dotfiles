@@ -208,15 +208,15 @@ plugins {
 // Options:
 //   - true (default)
 //   - false
+pane_frames false
 //
-// pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
 //   - true (default)
 //   - false
 //
-// auto_layout true
+auto_layout false
 
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
@@ -249,12 +249,25 @@ themes {
         black "#000000"
         white "#ffffff"
     }
+    code {
+        fg "#cccccc"
+        bg "#1f1f1f"
+        black "#181818"
+        red "#FF0000"
+        green "#2EA043"
+        yellow "#b39973"
+        blue "#0078d4"
+        magenta "#d16d9e"
+        cyan "#04395e"
+        white "#9cdcfe"
+        orange "#D65D0E"
+    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "fleet"
+theme "code"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -290,7 +303,7 @@ theme "fleet"
 // Examples:
 //
 // copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
+copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 
 // Choose the destination for copied text

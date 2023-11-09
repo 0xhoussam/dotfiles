@@ -74,8 +74,6 @@ plugins=(git
   colored-man-pages
   docker
   docker-compose
-  zsh-autosuggestions
-  fast-syntax-highlighting
   zsh-vi-mode
 )
 
@@ -111,9 +109,10 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias alacrittyconfig='$EDITOR $HOME/.config/alacritty/alacritty.yml'
 alias swayconfig='$EDITOR $HOME/.config/sway/config'
 alias installscript='$EDITOR $HOME/dotfiles/install.sh'
-alias ls='exa --icons'
+alias ls='eza --icons'
 alias bat='bat --theme=ansi'
 alias less='less --use-color'
+alias v='lvim'
 
 # SOURCE
 source "$HOME/.cargo/env"
@@ -126,8 +125,21 @@ path+=($HOME/.local/bin)
 path+=(/home/pride/.dvm/bin)
 path+=(/home/pride/go/bin)
 
-
-alias dark='gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark \
-&& gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
-
 alias z='zellij'
+alias vim='nvim'
+alias makej='make -j $(nproc)'
+
+# pnpm
+export PNPM_HOME="/home/pride/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun completions
+[ -s "/home/pride/.bun/_bun" ] && source "/home/pride/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

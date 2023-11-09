@@ -1,3 +1,5 @@
+env:
+  TERM: xterm-256color
 #
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
@@ -69,7 +71,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.98
+  opacity: 1
 
   # Startup Mode (changes require restart)
   #
@@ -80,7 +82,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  startup_mode: Windowed
 
   # Window title
   title: Alacritty
@@ -120,15 +122,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    # family: BlexMono Nerd Font
-    #family: JetBrainsMono Nerd Font
-    #family: VictorMono Nerd Font
-    # family: Iosevka Nerd Font
-    # family: SFMono Nerd Font Mono
-    family: InputMono Compressed Nerd Font
+    family: SF Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Light
+    style: Medium
 
   # Bold font face
   bold:
@@ -136,16 +133,10 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: JetBrainsMono Nerd Font
-    # family: VictorMono Nerd Font
-    # family: BlexMono Nerd Font 
-    # family: UbuntuNerdFont 
-    # family: Iosevka Nerd Font
-    # family: SFMono Nerd Font Mono
-    family: InputMono Compressed Nerd Font
+    family: SF Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Medium
+    style: Bold
 
   # Italic font face
   italic:
@@ -153,12 +144,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: BlexMono Nerd Font
-    #family: JetBrainsMono Nerd Font
-    # family: VictorMono Nerd Font
-    # family: BlexMono Nerd Font 
-    # family: SFMono Nerd Font Mono
-    family: InputMono Compressed Nerd Font
+    family: SF Mono
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -169,12 +155,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: BlexMono Nerd Font
-    #family: JetBrainsMono Nerd Font
-    # family: VictorMono Nerd Font
-    # family: BlexMono Nerd Font 
-    # family: SFMono Nerd Font Mono
-    family: InputMono Compressed Nerd Font
+    family: SF Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -922,32 +903,56 @@ renderer: glsl3
   # Highlight window damage information.
   #highlight_damage: false
 
+# colors:
+#   # Background and Foreground
+#   primary:
+#     background: '0x1f1f1f'
+#     foreground: '0xcccccc'
+
+#   # Backgrounds
+#   normal:
+#     black:   '0x181818'
+#     red:     '0xFF0000'
+#     green:   '0x2EA043'
+#     yellow:  '0xb39973'
+#     blue:    '0x0078d4'
+#     magenta: '0xd16d9e'
+#     cyan:    '0x04395e'
+#     white:   '0x9cdcfe'
+
+#   # Bright Backgrounds
+#   bright:
+#     black:   '0x2a2a2a'
+#     red:     '0x9e4434'
+#     green:   '0x329171'
+#     yellow:  '0xc09553'
+#     blue:    '0x0a5289'
+#     magenta: '0xc586c0'
+#     cyan:    '0x0e639c'
+#     white:   '0x264f78'
+
 colors:
   primary:
-    background: "#181818"
-    foreground: "#d6d6dd"
-  search:
-    matches:
-      foreground: "#181818"
-      background: '#52a7f6'
-    footer_bar:
-      background: '#292929'
-      foreground: '#ffffff'
+    background: '#181818'
+    foreground: '#d6d6dd'
+
   normal:
-    black: "#535353"
-    magenta: "#a390f0"
-    green: "#afcb85"
-    yellow: "#e5c995"
-    blue: "#52a7f6"
-    red: "#CC7C8A"
-    cyan: "#78d0bd"
-    white: "#6d6d6d"
+    black: '#292929'
+    red: '#CC7C8A'
+    green: '#afcb85'
+    yellow: '#e5c995'
+    blue: '#52a7f6'
+    magenta: '#a390f0'
+    cyan: '#78d0bd'
+    white: '#898989'
+
   bright:
-    black: "#898989"
-    magenta: "#d898d8"
-    green: "#00AF99"
-    yellow: "#DEA407"
-    blue: "#2197F3"
-    red: "#F44747"
-    cyan: "#3ddbd9"
-    white: "#ffffff"
+    black: '#535353'
+    red: '#F44747'
+    green: '#00AF99'
+    yellow: '#DEA407'
+    blue: '#7dbeff'
+    magenta: '#d898d8'
+    cyan: '#00AF99'
+    white: '#6d6d6d'
+

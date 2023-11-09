@@ -1,6 +1,6 @@
-vim.opt.cmdheight = 2                    -- more space in the neovim command line for displaying messages
-vim.opt.guifont = "SFMono Nerd Font:h13" -- the font used in graphical neovim applications
-vim.opt.relativenumber = true            -- relative line numbers
+vim.opt.cmdheight = 2         -- more space in the neovim command line for displaying messages
+-- vim.opt.guifont = "FiraMono Nerd Font:h13" -- the font used in graphical neovim applications
+vim.opt.relativenumber = true -- relative line numbers
 
 lvim.colorscheme = "fleet"
 vim.cmd('set termguicolors')
@@ -29,7 +29,9 @@ lvim.plugins = {
   { 'felipeagc/fleet-theme-nvim' },
   { 'gmr458/vscode_dark_modern.nvim' },
   { 'martinsione/darkplus.nvim' },
-  { "ellisonleao/glow.nvim",           config = true, cmd = "Glow" },
+  { "ellisonleao/glow.nvim",               config = true,    cmd = "Glow" },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },
+  { "bluz71/vim-moonfly-colors",           name = "moonfly", lazy = false, priority = 1000 }
 }
 
 -- Neovide
@@ -54,3 +56,8 @@ vim.api.nvim_create_autocmd('BufEnter', {
     vim.api.nvim_command("TSEnable illuminate")
   end,
 })
+
+if vim.g.neovide == true then
+  vim.o.guifont = 'SF Mono:h13'
+  vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+end
