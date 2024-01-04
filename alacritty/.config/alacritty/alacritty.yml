@@ -65,7 +65,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  # decorations: none
 
   # Background opacity
   #
@@ -122,10 +122,13 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: SF Mono
+    # family: Liga SFMono Nerd Font
+    # family: Ubuntu Mono
+    # family: Monaspace Neon
+    family: CascadiaCode
 
     # The `style` can be specified to pick a specific face.
-    style: Medium
+    style: Semilight
 
   # Bold font face
   bold:
@@ -133,7 +136,10 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
+    # family: Ubuntu Mono
+    # family: Monaspace Neon
+    # family: JetBrainsMono Nerd Font
+    family: CascadiaCode
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -144,10 +150,14 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
+    # family: JetBrainsMono Nerd Font
+    # family: Liga SFMono Nerd Font
+    # family: Ubuntu Mono
+    # family: Monaspace Neon
+    family: CascadiaCode
 
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    style: Semilight Italic
 
   # Bold italic font face
   bold_italic:
@@ -155,7 +165,11 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: SF Mono
+    # family: JetBrainsMono Nerd Font
+    # family: Liga SFMono Nerd Font
+    # family: Ubuntu Mono
+    # family: Monaspace Neon
+    family: CascadiaCode
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -458,7 +472,7 @@ shell:
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
 
-#mouse:
+mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
@@ -468,7 +482,7 @@ shell:
   #triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
+  hide_when_typing: false
 
 # Hints
 #

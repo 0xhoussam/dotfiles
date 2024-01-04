@@ -1,27 +1,22 @@
 layout {
     pane split_direction="vertical" {
-      pane
+        pane
     }
 
     pane size=1 borderless=true {
         plugin location="file:/home/pride/.local/share/zellij/plugins/zjstatus.wasm" {
-            format_left  "{mode}#[fg=#1e1e1e,bg=#a390f0,bold]{session}  #[fg=#a390f0,bg=#1e1e1e]{tabs}"
-            format_right "#[fg=#1e1e1e,bg=#d6d6dd]{datetime}"
-            format_space "#[bg=#1e1e1e]"
+            format_left  "#[fg=0,bg=10][{session}]  {tabs}"
+            format_right "#[fg=0,bg=10]{datetime}"
+            format_space "#[bg=10]"
 
             hide_frame_for_single_pane "true"
 
-            tab_normal              "#[fg=#1e1e1e,bg=#52a7f6] #[fg=#1e1e1e,bg=#52a7f6]{index}  {name} #[fg=#1e1e1e,bg=#1e1e1e]"
-            tab_normal_fullscreen   "#[fg=#1e1e1e,bg=#52a7f6] {index} {name} [] "
-            tab_normal_sync         "#[fg=#6d6d6d,bg=#1e1e1e] {index} {name} <> "
-            tab_active              "#[fg=#1e1e1e,bg=#ffffff,bold,italic] {index}  {name} #[fg=#ffffff,bg=#1e1e1e]"
-            tab_active_fullscreen   "#[fg=#a390f0,bg=#1e1e1e,bold,italic] {index} {name} [] "
-            tab_active_sync         "#[fg=#a390f0,bg=#1e1e1e,bold,italic] {index} {name} <> "
-    
-    
-            datetime          "#[fg=#1e1e1e,bg=#d6d6dd,bold] {format} "
-            datetime_format   "%A, %d %b %Y %H:%M"
-            datetime_timezone "Africa/casablanca"
+            tab_normal   "{index}:{name}  "
+            tab_active   "{index}:{name}* "
+
+            datetime          " {format} "
+            datetime_format   "%H:%M %d-%b-%y"
+            datetime_timezone "Europe/Berlin"
         }
     }
 }

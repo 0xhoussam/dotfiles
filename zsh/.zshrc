@@ -126,7 +126,7 @@ path+=(/home/pride/.dvm/bin)
 path+=(/home/pride/go/bin)
 
 alias z='zellij'
-alias vim='nvim'
+# alias vim='nvim'
 alias makej='make -j $(nproc)'
 
 # pnpm
@@ -136,10 +136,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+path+=(/home/pride/.local/share/bob/nvim-bin)
+path+=(/home/pride/.local/bin/zig)
+path+=(/home/pride/.local/bin/flutter/bin)
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/pride/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
-# bun completions
-[ -s "/home/pride/.bun/_bun" ] && source "/home/pride/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+function i() {
+  sudo apt install $@
+}

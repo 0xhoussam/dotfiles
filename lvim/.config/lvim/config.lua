@@ -15,7 +15,6 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 lvim.plugins = {
-  { "lunarvim/colorschemes" },
   {
     "stevearc/dressing.nvim",
     config = function()
@@ -24,14 +23,67 @@ lvim.plugins = {
       })
     end,
   },
-  { 'andweeb/presence.nvim' },
-  { 'nyoom-engineering/oxocarbon.nvim' },
   { 'felipeagc/fleet-theme-nvim' },
-  { 'gmr458/vscode_dark_modern.nvim' },
-  { 'martinsione/darkplus.nvim' },
-  { "ellisonleao/glow.nvim",               config = true,    cmd = "Glow" },
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },
-  { "bluz71/vim-moonfly-colors",           name = "moonfly", lazy = false, priority = 1000 }
+  { 'wakatime/vim-wakatime',     lazy = false },
+  { 'kvrohit/mellow.nvim' },
+  { 'tpope/vim-dadbod' },
+  {
+    'kristijanhusak/vim-dadbod-ui',
+    dependencies = {
+      { 'tpope/vim-dadbod',                     lazy = true },
+      { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+    },
+    cmd = {
+      'DBUI',
+      'DBUIToggle',
+      'DBUIAddConnection',
+      'DBUIFindBuffer',
+    },
+    init = function()
+      -- Your DBUI configuration
+      vim.g.db_ui_use_nerd_fonts = 1
+    end,
+  },
+  { 'kristijanhusak/vim-dadbod-completion' },
+  {
+    'chentoast/marks.nvim',
+    config = function()
+      require 'marks'.setup {
+        -- whether to map keybinds or not. default true
+        default_mappings = true,
+        -- which builtin marks to show. default {}
+        builtin_marks = { ".", "<", ">", "^" },
+        -- whether movements cycle back to the beginning/end of buffer. default true
+        cyclic = true,
+        -- whether the shada file is updated after modifying uppercase marks. default false
+        force_write_shada = false,
+        -- how often (in ms) to redraw signs/recompute mark positions.
+        -- higher values will have better performance but may cause visual lag,
+        -- while lower values may cause performance penalties. default 150.
+        refresh_interval = 250,
+        -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+        -- marks, and bookmarks.
+        -- can be either a table with all/none of the keys, or a single number, in which case
+        -- the priority applies to all marks.
+        -- default 10.
+        sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
+        -- disables mark tracking for specific filetypes. default {}
+        excluded_filetypes = {},
+        -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
+        -- sign/virttext. Bookmarks can be used to group together positions and quickly move
+        -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
+        -- default virt_text is "".
+        bookmark_0 = {
+          sign = "⚑",
+          virt_text = "hello world",
+          -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
+          -- defaults to false.
+          annotate = false,
+        },
+        mappings = {}
+      }
+    end
+  }
 }
 
 -- Neovide
@@ -58,6 +110,26 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 if vim.g.neovide == true then
-  vim.o.guifont = 'SF Mono:h13'
+  -- vim.o.guifont = ':h12'
+  -- vim.o.guifont = 'Ubuntu Mono:h12'
+  vim.o.guifont = 'Liga SFMono Nerd Font:h11'
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
+
+vim.api.nvim_set_option("clipboard", "unnamed")
+vim.cmd('setlocal spell spelllang=en_us')
+
+
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+  return server ~= "sqlls"
+end, lvim.lsp.automatic_configuration.skipped_servers)
+
+require("lvim.lsp.manager").setup("sqlls", {
+  cmd = { "sql-language-server", "up", "--method", "stdio" },
+  filetypes = { "sql", "mysql" },
+  root_dir = function() return vim.loop.cwd() end,
+})
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+-- }

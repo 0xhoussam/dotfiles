@@ -1,0 +1,66 @@
+live_config_reload = true
+
+[colors.bright]
+black = "#535353"
+blue = "#7dbeff"
+cyan = "#00AF99"
+green = "#00AF99"
+magenta = "#d898d8"
+red = "#F44747"
+white = "#6d6d6d"
+yellow = "#DEA407"
+
+[colors.normal]
+black = "#292929"
+blue = "#52a7f6"
+cyan = "#78d0bd"
+green = "#afcb85"
+magenta = "#a390f0"
+red = "#CC7C8A"
+white = "#898989"
+yellow = "#e5c995"
+
+[colors.primary]
+background = "#181818"
+foreground = "#d6d6dd"
+
+[cursor.style]
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "CascadiaCode"
+style = "Bold"
+
+[font.bold_italic]
+family = "CascadiaCode"
+style = "Bold Italic"
+
+[font.italic]
+family = "CascadiaCode"
+style = "Semilight Italic"
+
+[font.normal]
+family = "CascadiaCode"
+style = "Semilight"
+
+[mouse]
+hide_when_typing = false
+
+[shell]
+args = ["--login"]
+program = "/bin/zsh"
+
+[window]
+opacity = 1
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.padding]
+x = 4
+y = 1
