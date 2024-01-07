@@ -111,8 +111,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 
 if vim.g.neovide == true then
   -- vim.o.guifont = ':h12'
-  -- vim.o.guifont = 'Ubuntu Mono:h12'
-  vim.o.guifont = 'Liga SFMono Nerd Font:h11'
+  vim.o.guifont = 'Iosevka Nerd Font:h13'
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
 
@@ -133,3 +132,5 @@ require("lvim.lsp.manager").setup("sqlls", {
 -- linters.setup {
 --   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 -- }
+
+-- vim.lsp.buf.inlay_hint(0, true)

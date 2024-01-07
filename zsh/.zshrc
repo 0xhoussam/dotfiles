@@ -144,3 +144,6 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/pride/.local/share/fl
 function i() {
   sudo apt install $@
 }
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+alias cat='bat --theme=ansi'
