@@ -60,6 +60,7 @@ program = "/bin/zsh"
 opacity = 1
 startup_mode = "Windowed"
 title = "Alacritty"
+decorations = "None"
 
 [window.padding]
 x = 4
