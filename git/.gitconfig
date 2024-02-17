@@ -1,6 +1,7 @@
 [user]
-	email = 32068899+0xPride@users.noreply.github.com
+	email = abouiba099@gmail.com
   name = 0xhoussam
+	signingKey = DF3352E8
 
 [core]
     pager = delta
@@ -25,3 +26,9 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[maintenance]
+	repo = /home/pride/42/web
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg

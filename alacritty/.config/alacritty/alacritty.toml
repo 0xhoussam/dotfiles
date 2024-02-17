@@ -34,23 +34,23 @@ TERM = "xterm-256color"
 size = 13.0
 
 [font.bold]
-family = "Iosevka Nerd Font"
+family = "Liga SFMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka Nerd Font"
+family = "Liga SFMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka Nerd Font"
-style = "Semilight Italic"
+family = "Liga SFMono Nerd Font"
+style = "Italic"
 
 [font.normal]
-family = "Iosevka Nerd Font"
-style = "Semilight"
+family = "Liga SFMono Nerd Font"
+style = "Medium"
 
 [mouse]
-hide_when_typing = false
+hide_when_typing = true 
 
 [shell]
 args = ["--login"]
@@ -63,5 +63,5 @@ title = "Alacritty"
 decorations = "None"
 
 [window.padding]
-x = 4
+x = 6
 y = 1

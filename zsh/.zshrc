@@ -139,6 +139,7 @@ esac
 path+=(/home/pride/.local/share/bob/nvim-bin)
 path+=(/home/pride/.local/bin/zig)
 path+=(/home/pride/.local/bin/flutter/bin)
+path+=(/home/pride/.local/share/lvim/mason/bin)
 export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/pride/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
 function i() {
