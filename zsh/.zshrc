@@ -120,6 +120,7 @@ source "$HOME/.cargo/env"
 # PATH
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
 # export PAGER="most"
 path+=($HOME/.local/bin)
 path+=(/home/pride/.dvm/bin)
@@ -140,11 +141,5 @@ path+=(/home/pride/.local/share/bob/nvim-bin)
 path+=(/home/pride/.local/bin/zig)
 path+=(/home/pride/.local/bin/flutter/bin)
 path+=(/home/pride/.local/share/lvim/mason/bin)
-export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/pride/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
-function i() {
-  sudo apt install $@
-}
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-alias cat='bat --theme=ansi'

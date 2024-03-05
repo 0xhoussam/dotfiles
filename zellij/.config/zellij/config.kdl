@@ -175,7 +175,7 @@ plugins {
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-default_shell "zsh"
+default_shell "fish"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -217,7 +217,7 @@ themes {
         fg "#d6d6dd"
         bg "#181818"
         red "#CC7C8A"
-        green "#a390f0"
+        green "#37fd12"
         yellow "#e5c995"
         blue "#52a7f6"
         magenta "#d898d8"

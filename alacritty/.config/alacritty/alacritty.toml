@@ -1,28 +1,38 @@
 live_config_reload = true
 
-[colors.bright]
-black = "#535353"
-blue = "#7dbeff"
-cyan = "#00AF99"
-green = "#00AF99"
-magenta = "#d898d8"
-red = "#F44747"
-white = "#6d6d6d"
-yellow = "#DEA407"
-
-[colors.normal]
-black = "#292929"
-blue = "#52a7f6"
-cyan = "#78d0bd"
-green = "#afcb85"
-magenta = "#a390f0"
-red = "#CC7C8A"
-white = "#898989"
-yellow = "#e5c995"
+[colors.cursor]
+text = '#292929'
+cursor = '#FF5269'
 
 [colors.primary]
-background = "#181818"
-foreground = "#d6d6dd"
+background= '#181818'
+foreground= '#d6d6dd'
+
+  # Bright colors
+[colors.bright]
+black = '#292929'
+red = '#CC7C8A'
+green = '#afcb85'
+yellow = '#e5c995'
+blue = '#52a7f6'
+magenta = '#a390f0'
+cyan = '#78d0bd'
+white = '#d6d6dd'
+
+  # Normal colors
+[colors.normal]
+black = '#292929'
+red = '#CC7C8A'
+green = '#afcb85'
+yellow = '#e5c995'
+blue = '#52a7f6'
+magenta = '#a390f0'
+cyan = '#78d0bd'
+white = '#d6d6dd'
+
+[colors.selection]
+text= '#292929'
+background= '#767676'
 
 [cursor.style]
 shape = "Beam"
@@ -54,7 +64,7 @@ hide_when_typing = true
 
 [shell]
 args = ["--login"]
-program = "/bin/zsh"
+program = "/usr/bin/fish"
 
 [window]
 opacity = 1
