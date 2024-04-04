@@ -1,8 +1,6 @@
 require("pride.plugins")
 require("pride.base")
 
-require("ibl").setup()
-
 vim.cmd([[
 augroup RestoreCursorShapeOnExit
     autocmd!

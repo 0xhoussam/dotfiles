@@ -3,15 +3,12 @@ vim.opt.relativenumber = true
 
 lvim.colorscheme = "fleet"
 vim.cmd('set termguicolors')
-vim.opt.background = "dark" -- set this to dark or light
+vim.opt.background = "dark"
 lvim.format_on_save.enabled = false
 
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.builtin.treesitter.rainbow.enable = true
--- use treesitter folding
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 lvim.plugins = {
   {
@@ -23,6 +20,7 @@ lvim.plugins = {
     end,
   },
   { 'felipeagc/fleet-theme-nvim' },
+
   { 'wakatime/vim-wakatime',     lazy = false },
 
   {
@@ -38,7 +36,6 @@ lvim.plugins = {
         },
         query = {
           [""] = "rainbow-delimiters",
-          -- lua = "rainbow-blocks",
         },
       }
     end,
@@ -62,13 +59,6 @@ lvim.plugins = {
           dired_rename = "R",
           dired_quit = "q",
         },
-        -- Define colors for different file types and attributes
-        -- colors = {
-        --   DiredDimText = { link = {}, bg = "NONE", fg = "505050", gui = "NONE" },
-        --   DiredDirectoryName = { link = {}, bg = "NONE", fg = "9370DB", gui = "NONE" },
-        --   -- ... (define more colors as needed)
-        --   DiredMoveFile = { link = {}, bg = "NONE", fg = "ff3399", gui = "bold" },
-        -- },
       })
     end
   },
@@ -180,9 +170,21 @@ lvim.plugins = {
       require "lsp_signature".on_attach(cfg)
     end,
   },
+  {
+    "gelguy/wilder.nvim",
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({ modes = { ':', '/', '?' } })
+
+      wilder.set_option('renderer', wilder.popupmenu_renderer({
+        highlighter = wilder.basic_highlighter(),
+        left = { ' ', wilder.popupmenu_devicons() },
+        right = { ' ', wilder.popupmenu_scrollbar() },
+      }))
+    end
+  }
 }
 
--- revert the cursor
 vim.cmd([[
 augroup RestoreCursorShapeOnExit
     autocmd!
@@ -190,29 +192,13 @@ augroup RestoreCursorShapeOnExit
 augroup END
 ]])
 
--- neovide bug
 if vim.g.neovide == true then
-  vim.o.guifont = 'Liga SFMono Nerd Font:h13'
+  vim.o.guifont = 'Liga SFMono Nerd Font:h12'
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
 
--- vim.api.nvim_set_option("clipboard", "unnamed")
 vim.cmd('setlocal spell spelllang=en_us')
 
 vim.cmd('set clipboard=unnamedplus');
 
 lvim.builtin.indentlines.active = false;
-
--- Set up the autocmd to trigger the function when a directory is opened
--- vim.api.nvim_create_autocmd("BufEnter", {
---     pattern = "*",
---     callback = function ()
---       if vim.fn.isdirectory(vim.fn.expand("%")) == 1 then
---         vim.cmd("Dired")
---       end
---     end,
--- })
-
-lvim.builtin.which_key.mappings["o"] = {
-  "<cmd>Dired<CR>", "Open Project Directory"
-}

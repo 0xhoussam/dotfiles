@@ -143,3 +143,5 @@ path+=(/home/pride/.local/bin/flutter/bin)
 path+=(/home/pride/.local/share/lvim/mason/bin)
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+eval "$(atuin init zsh)"
