@@ -193,7 +193,7 @@ augroup END
 ]])
 
 if vim.g.neovide == true then
-  vim.o.guifont = 'Liga SFMono Nerd Font:h12'
+  vim.o.guifont = 'Iosevka Nerd Font:h15'
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
 

@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
         require("dired").setup {
             path_separator = "/",
             show_banner = false,
-            show_icons = false,
+            show_icons = true,
             show_hidden = true,
             show_dot_dirs = true,
             show_colors = true,

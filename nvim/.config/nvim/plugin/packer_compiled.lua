@@ -75,7 +75,7 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["dired.nvim"] = {
-    config = { "\27LJ\2\n構1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\6\19path_separator\6/\16show_colors\2\18show_dot_dirs\2\16show_hidden\2\15show_icons\1\16show_banner\1\nsetup\ndired\frequire\0" },
+    config = { "\27LJ\2\n構1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\6\16show_colors\2\18show_dot_dirs\2\16show_hidden\2\15show_icons\2\16show_banner\1\19path_separator\6/\nsetup\ndired\frequire\0" },
     loaded = true,
     path = "/home/pride/.local/share/nvim/site/pack/packer/start/dired.nvim",
     url = "https://github.com/X3eRo0/dired.nvim"
@@ -105,7 +105,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: dired.nvim
 time([[Config for dired.nvim]], true)
-try_loadstring("\27LJ\2\n構1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\6\19path_separator\6/\16show_colors\2\18show_dot_dirs\2\16show_hidden\2\15show_icons\1\16show_banner\1\nsetup\ndired\frequire\0", "config", "dired.nvim")
+try_loadstring("\27LJ\2\n構1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\6\16show_colors\2\18show_dot_dirs\2\16show_hidden\2\15show_icons\2\16show_banner\1\19path_separator\6/\nsetup\ndired\frequire\0", "config", "dired.nvim")
 time([[Config for dired.nvim]], false)
 
 _G._packer.inside_compile = false

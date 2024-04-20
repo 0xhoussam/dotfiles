@@ -84,4 +84,10 @@ opt.mouse = "a"
 g.mapleader = " "
 g.maplocalleader = " "
 
-vim.opt.guifont = { "SFMono Nerd Font", "h14" }
+-- Reseting the cursor
+vim.cmd([[
+augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=a:ver20
+augroup END
+]])
