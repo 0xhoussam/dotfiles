@@ -5,7 +5,7 @@ text = '#292929'
 cursor = '#FF5269'
 
 [colors.primary]
-background= '#181818'
+background= '#1e1e1e'
 foreground= '#d6d6dd'
 
   # Bright colors

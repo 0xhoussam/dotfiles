@@ -3,6 +3,6 @@
 export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-$HOME/.config/lvim}"
 export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-$HOME/.local/share/lunarvim}"
 export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-$HOME/.cache/lvim}"
-export DRI_PRIME=0
+export DRI_PRIME=1
 WINIT_UNIX_BACKEND=wayland
-exec  neovide --multigrid -- -u "$LUNARVIM_RUNTIME_DIR/lvim/init.lua" "$@"
+exec  neovide -- -u "$LUNARVIM_RUNTIME_DIR/lvim/init.lua" "$@"

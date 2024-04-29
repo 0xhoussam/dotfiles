@@ -1,17 +1,13 @@
 #!/bin/bash
 
+export GTK_THEME='adw-gtk3-dark'
 # set -e
-
-export GTK_THEME=Adwaita:dark
-gapplication action org.rnd2.cpupower_gui Performance
-
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita:dark'
-gsettings set org.gnome.desktop.interface icon-theme 'ePapirus-Dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
-gsettings set org.gnome.desktop.interface cursor-size '22'
-gsettings set org.gnome.desktop.interface monospace-font-name 'SF Mono 11'
-gsettings set org.gnome.desktop.interface font-name 'SF Pro 11'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+gsettings set org.gnome.desktop.interface cursor-size '20'
+gsettings set org.gnome.desktop.interface font-name 'SF Pro Display 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Liga SFMono Nerd Font 11'
+gsettings set org.gnome.desktop.interface document-font-name 'SF Pro Display 11'
 gsettings set org.gnome.desktop.interface enable-animations 'true'
-# gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # vi: ft=sh

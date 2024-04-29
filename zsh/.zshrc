@@ -118,8 +118,6 @@ alias v='lvim'
 source "$HOME/.cargo/env"
 
 # PATH
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # export PAGER="most"
 path+=($HOME/.local/bin)
@@ -145,3 +143,5 @@ path+=(/home/pride/.local/share/lvim/mason/bin)
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 eval "$(atuin init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

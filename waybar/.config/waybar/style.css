@@ -1,13 +1,11 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: SF Pro, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: InterDisplay,SF Pro Display, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
-    background-color: #161616;
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #f4f4f4;
+    background-color: #242424;
+    color: #fafafa;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -17,14 +15,15 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background-color: #161616;
-  color: #f4f4f4;
+  background-color: #242424;
+  color: #fafafa;
   margin: 0;
   padding: 0;
+  font-weight: 600;
 }
 
 #workspaces button.active {
-  background-color: #491d8b;
+  background-color: #3584e4;
   color: #f4f4f4;
   border-radius: 10px;
 }
@@ -53,7 +52,7 @@ window#waybar.hidden {
 
 
 #tray {
-    background-color: #161616;
+    background-color: #242424;
 }
 
 #tray > .passive {
@@ -62,11 +61,21 @@ window#waybar.hidden {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: #c01c28;
 }
 
 #clock {
-    padding-right: 15px;
-    margin-right: 5px;
-    border-radius: 0px 15px 15px 0px;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#pulseaudio {
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+#backlight {
+    padding-right: 10px;
+    margin-right: 10px;
 }
