@@ -2,12 +2,13 @@ local g = vim.g
 local o = vim.o
 local opt = vim.opt
 
--- cmd('syntax on')
--- vim.api.nvim_command('filetype plugin indent on')
+vim.cmd('syntax on')
+vim.api.nvim_command('filetype plugin indent on')
 
 o.termguicolors = true
 o.background = 'dark'
-vim.cmd.colorscheme "moonfly"
+vim.cmd.colorscheme "fleet"
+vim.o.guifont = "Liga SFMono Nerd Font:h13"
 
 -- Do not save when switching buffers
 -- o.hidden = true

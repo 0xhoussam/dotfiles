@@ -6,20 +6,43 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use { 'bluz71/vim-moonfly-colors', as = 'moonfly' }
-  use { 'nvim-treesitter/nvim-treesitter' }
+  use 'nvim-treesitter/nvim-treesitter'
+  use "felipeagc/fleet-theme-nvim"
+  use "HiPhish/rainbow-delimiters.nvim"
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'nvim-lualine/lualine.nvim'
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+  use 'nvim-tree/nvim-tree.lua'
+  use 'nvim-tree/nvim-web-devicons'
+  use 'rebelot/terminal.nvim'
+  use 'RRethy/vim-illuminate'
+  use 'ahmedkhalf/project.nvim'
+
   use {
-    "X3eRo0/dired.nvim",
-    requires = "MunifTanjim/nui.nvim",
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
     config = function()
-        require("dired").setup {
-            path_separator = "/",
-            show_banner = false,
-            show_icons = true,
-            show_hidden = true,
-            show_dot_dirs = true,
-            show_colors = true,
-        }
+      require("nvim-autopairs").setup()
     end
-    }
+  }
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  use {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end
+  }
+
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    -- or                            , branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 end)
