@@ -3,70 +3,79 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- empty setup using defaults
-require('nvim-tree').setup({
-    hijack_cursor = true,
-    sync_root_with_cwd = true,
-    view = {
-      adaptive_size = true,
-    },
-    renderer = {
-      full_name = true,
-      group_empty = true,
-      special_files = {},
-      symlink_destination = false,
-      indent_markers = {
-        enable = true,
-      },
-      icons = {
-        git_placement = "signcolumn",
-        show = {
-          file = true,
-          folder = false,
-          folder_arrow = false,
-          git = true,
-        },
-      },
-    },
-    update_focused_file = {
-      enable = true,
-      update_root = true,
-      ignore_list = { "help" },
-    },
-    diagnostics = {
-      enable = true,
-      show_on_dirs = true,
-    },
-    filters = {
-      custom = {
-        "^.git$",
-      },
-    },
-    actions = {
-      change_dir = {
-        enable = false,
-        restrict_above_cwd = true,
-      },
-      open_file = {
-        resize_window = true,
-        window_picker = {
-          chars = "aoeui",
-        },
-      },
-      remove_file = {
-        close_window = false,
-      },
-    },
-    log = {
-      enable = false,
-      truncate = true,
-      types = {
-        all = false,
-        config = false,
-        copy_paste = false,
-        diagnostics = false,
-        git = false,
-        profile = false,
-        watcher = false,
-      },
-    },
-})
+local options = {
+	filters = {
+		dotfiles = false,
+	},
+	disable_netrw = true,
+	hijack_netrw = true,
+	hijack_cursor = true,
+	hijack_unnamed_buffer_when_opening = false,
+	sync_root_with_cwd = true,
+	update_focused_file = {
+		enable = true,
+		update_root = false,
+	},
+	view = {
+		adaptive_size = false,
+		side = "left",
+		width = 30,
+		preserve_window_proportions = true,
+	},
+	git = {
+		enable = true,
+		ignore = true,
+	},
+	filesystem_watchers = {
+		enable = true,
+	},
+	actions = {
+		open_file = {
+			resize_window = true,
+		},
+	},
+	renderer = {
+		root_folder_label = false,
+		highlight_git = true,
+		highlight_opened_files = "none",
+
+		indent_markers = {
+			enable = true,
+		},
+
+		icons = {
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = true,
+			},
+
+			glyphs = {
+				default = "󰈚",
+				symlink = "",
+				folder = {
+					default = "",
+					empty = "",
+					empty_open = "",
+					open = "",
+					symlink = "",
+					symlink_open = "",
+					arrow_open = "",
+					arrow_closed = "",
+				},
+				git = {
+					unstaged = "",
+					staged = "󰸞",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "",
+					deleted = "",
+					ignored = "◌",
+				},
+			},
+		},
+	},
+}
+
+require("nvim-tree").setup(options)

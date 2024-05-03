@@ -1,17 +1,25 @@
 * {
-    font-family: InterDisplay,SF Pro Display, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+  font-family:
+    Zed Sans,
+    InterDisplay,
+    SF Pro Display,
+    FontAwesome,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
 }
 
 window#waybar {
-    background-color: #242424;
-    color: #fafafa;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: #242424;
+  color: #fafafa;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 #workspaces {
@@ -32,50 +40,48 @@ window#waybar.hidden {
   font-weight: 600;
 }
 
-
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
 
-
 #tray {
-    background-color: #242424;
+  background-color: #242424;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #c01c28;
+  -gtk-icon-effect: highlight;
+  background-color: #c01c28;
 }
 
 #clock {
-    padding-right: 10px;
-    margin-right: 10px;
-    font-weight: bold;
+  padding-right: 10px;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
 #pulseaudio {
-    padding-right: 10px;
-    margin-right: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
 }
 
 #backlight {
-    padding-right: 10px;
-    margin-right: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
 }

@@ -1,16 +1,8 @@
-sudo pacman -Syu --needed git intel-ucode base-devel
-
-if ! command -v yay &> /dev/null
-then
-	git clone https://aur.archlinux.org/yay.git /tmp/yay
-	cd /tmp/yay && makepkg -si && exec bash && yay -Syu && cd ~ && rm -rf /tmp/yay
-fi
-
-yay -S --needed stow hyprland alacritty pipewire  pipewire-alsa pipewire-audio wireplumber neovim neovide \
-  gcc kitty firefox wofi unzip brave-bin zsh gtk4 gtk3 vulkan-icd-loader lib32-vulkan-icd-loader vulkan-tools \
-  vulkan-intel zathura zathura-djvu zathura-pdf-mupdf radeontop light bluez bluez-utils yt-dlp waybar-hyprland-git \
-  hyprpaper-git ttf-font-awesome pacman-contrib android-file-transfer mpd github-cli exa man-db man-pages otf-font-awesome \
-  ranger udisks2 axel mesa-vdpau libva-mesa-driver
+yay -S --needed stow hyprland alacritty neovim neovide \
+  firefox wofi unzip brave-bin zsh fish gtk4 gtk3  \
+  zathura zathura-djvu zathura-pdf-mupdf bluez bluez-utils yt-dlp waybar \
+  hyprpaper-git ttf-font-awesome pacman-contrib android-file-transfer mpd github-cli eza man-db man-pages otf-font-awesome \
+  udisks2 axel
 
 # disable touch screen
 FILETOUCH=/etc/mkinitcpio.d/hid_multitouch.conf
@@ -28,15 +20,6 @@ if [ ! -d "$DIRPACKER" ]; then
 	sudo echo 'blacklist hid_multitouch' > "$DIRPACKER"
 else
     echo "packer already installed"
-fi
-
-if ! command -v volta &> /dev/null
-then
-	curl https://get.volta.sh | bash
-	source ~/.zshrc
-	volta install node
-else
-  echo "volta already installed"
 fi
 
 sudo systemctl enable bluetooth.service

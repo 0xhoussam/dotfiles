@@ -2,7 +2,7 @@
 
 export GTK_THEME='adw-gtk3-dark'
 export GPG_TTY=$(tty)
-# set -e
+
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 gsettings set org.gnome.desktop.interface cursor-size '20'
 gsettings set org.gnome.desktop.interface font-name 'SF Pro Display 11'
