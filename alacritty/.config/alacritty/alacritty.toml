@@ -2,7 +2,7 @@ live_config_reload = true
 
 [colors.cursor]
 text = '#292929'
-cursor = '#FF5269'
+cursor = '#1c71d8'
 
 [colors.primary]
 background= '#1e1e1e'

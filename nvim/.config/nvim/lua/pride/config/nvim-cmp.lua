@@ -7,12 +7,12 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
 	window = {
-		completion = cmp_window.bordered(),
-		documentation = cmp_window.bordered(),
-	},
-	completion = {
-		completopt = "menu.menuone,preview,noselect",
-		winhighlight = "Normal:Pmenu",
+		completion = {
+			completopt = "menu.menuone,preview,noselect",
+			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+		},
+		col_offset = -3,
+		side_padding = 0,
 	},
 	snippet = {
 		expand = function(arg)
@@ -37,7 +37,15 @@ cmp.setup({
 	view = {
 		entries = { name = "custom", selection_order = "near_cursor" },
 	},
-	formatting = {
-		format = lspkind.cmp_format(),
-	},
+	-- formatting = {
+	-- 	fields = { "kind", "abbr", "menu" },
+	-- 	format = function(entry, vim_item)
+	-- 		local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+	-- 		local strings = vim.split(kind.kind, "%s", { trimempty = true })
+	-- 		kind.kind = " " .. (strings[1] or "") .. " "
+	-- 		kind.menu = "    (" .. (strings[2] or "") .. ")"
+	--
+	-- 		return kind
+	-- 	end,
+	-- },
 })

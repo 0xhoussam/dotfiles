@@ -3,12 +3,13 @@ local o = vim.o
 local opt = vim.opt
 
 vim.cmd("syntax on")
+vim.cmd("setlocal spell spelllang=en_us")
+vim.opt.cmdheight = 1
 vim.api.nvim_command("filetype plugin indent on")
 
 o.termguicolors = true
 o.background = "dark"
-vim.cmd.colorscheme("vscode_modern")
--- vim.o.guifont = "JetBrainsMono Nerd Font:h14"
+vim.cmd.colorscheme("fleet")
 vim.o.guifont = "ZedMono Nerd Font:h14"
 
 -- Do not save when switching buffers

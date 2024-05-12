@@ -2,7 +2,11 @@
 
 -- Only required if you have packer configured as `opt`
 local plugins = {
-	"felipeagc/fleet-theme-nvim",
+	-- "0xhoussam/fleet-theme-nvim",
+	{
+		dir = "~/projects/fleet-theme-nvim",
+		dev = true,
+	},
 	"HiPhish/rainbow-delimiters.nvim",
 	"nvim-tree/nvim-web-devicons",
 	{
@@ -154,6 +158,21 @@ local plugins = {
 		"famiu/bufdelete.nvim",
 		config = function()
 			require("bufdelete")
+		end,
+	},
+	{
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup()
+		end,
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
+	{
+		"kevinhwang91/nvim-bqf",
+		ft = "qf",
+		config = function()
+			require("bqf")
 		end,
 	},
 }

@@ -1,5 +1,6 @@
 * {
   font-family:
+    Cantarell,
     Zed Sans,
     InterDisplay,
     SF Pro Display,
@@ -12,8 +13,8 @@
 }
 
 window#waybar {
-  background-color: #242424;
-  color: #fafafa;
+  background-color: #1e1e1e;
+  color: #f4f4f4;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -31,9 +32,10 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  background-color: #3584e4;
+  background-color: #1c71d8;
   color: #f4f4f4;
   border-radius: 10px;
+  font-weight: bold;
 }
 
 #window {

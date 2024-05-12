@@ -75,7 +75,7 @@ layout {
 
             datetime          " {format} "
             datetime_format   "%H:%M %d-%b-%y"
-            datetime_timezone "Europe/Berlin"
+            datetime_timezone "Africa/Casablanca"
         }
     }
   }
