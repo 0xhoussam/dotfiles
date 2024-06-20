@@ -3,14 +3,16 @@ local o = vim.o
 local opt = vim.opt
 
 vim.cmd("syntax on")
-vim.cmd("setlocal spell spelllang=en_us")
 vim.opt.cmdheight = 1
 vim.api.nvim_command("filetype plugin indent on")
 
 o.termguicolors = true
 o.background = "dark"
 vim.cmd.colorscheme("fleet")
-vim.o.guifont = "ZedMono Nerd Font:h14"
+vim.o.guifont = "ZedMono Nerd Font:h17"
+
+o.ph = 10
+o.pw = 2
 
 -- Do not save when switching buffers
 -- o.hidden = true
@@ -39,8 +41,8 @@ o.textwidth = 300
 o.tabstop = 4
 o.shiftwidth = 4
 o.softtabstop = -1 -- If negative, shiftwidth value is used
-o.list = true
-o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
+o.list = false
+-- o.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 -- o.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
 -- o.formatoptions = 'qrn1'
 
@@ -87,7 +89,7 @@ opt.mouse = "a"
 g.mapleader = " "
 g.maplocalleader = " "
 
--- Reseting the cursor
+-- Resetting the cursor
 vim.cmd([[
 augroup RestoreCursorShapeOnExit
     autocmd!

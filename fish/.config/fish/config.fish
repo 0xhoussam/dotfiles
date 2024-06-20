@@ -9,6 +9,7 @@ abbr --add hyprconfig nvim ~/.config/hypr/hyprland.conf
 abbr --add wayconfig nvim ~/.config/waybar/config.jsonc
 abbr --add alacrittyconfig nvim ~/.config/alacritty/alacritty.toml
 abbr --add m make -j 4
+abbr --add bctl bluetoothctl
 
 abbr --add gitconfig nvim ~/.gitconfig
 abbr --add gst git status

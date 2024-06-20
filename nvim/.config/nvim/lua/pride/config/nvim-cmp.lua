@@ -1,16 +1,14 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
-local cmp_window = require("cmp.config.window")
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
+	performance = {},
 	window = {
-		completion = {
-			completopt = "menu.menuone,preview,noselect",
-			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
-		},
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 		col_offset = -3,
 		side_padding = 0,
 	},
@@ -37,15 +35,16 @@ cmp.setup({
 	view = {
 		entries = { name = "custom", selection_order = "near_cursor" },
 	},
-	-- formatting = {
-	-- 	fields = { "kind", "abbr", "menu" },
-	-- 	format = function(entry, vim_item)
-	-- 		local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-	-- 		local strings = vim.split(kind.kind, "%s", { trimempty = true })
-	-- 		kind.kind = " " .. (strings[1] or "") .. " "
-	-- 		kind.menu = "    (" .. (strings[2] or "") .. ")"
-	--
-	-- 		return kind
-	-- 	end,
-	-- },
+	formatting = {
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. (strings[1] or "") .. " "
+			kind.menu = "    (" .. (strings[2] or "") .. ")"
+			local max_width = 14
+			vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "..."
+			return kind
+		end,
+	},
 })

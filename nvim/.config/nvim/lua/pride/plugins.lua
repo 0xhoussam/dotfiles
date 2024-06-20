@@ -2,9 +2,8 @@
 
 -- Only required if you have packer configured as `opt`
 local plugins = {
-	-- "0xhoussam/fleet-theme-nvim",
 	{
-		dir = "~/projects/fleet-theme-nvim",
+		"~/projects/fleet",
 		dev = true,
 	},
 	"HiPhish/rainbow-delimiters.nvim",
@@ -121,19 +120,6 @@ local plugins = {
 		end,
 	},
 	{
-		"gmr458/vscode_modern_theme.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("vscode_modern").setup({
-				cursorline = true,
-				transparent_background = false,
-				nvim_tree_darker = true,
-			})
-			vim.cmd.colorscheme("vscode_modern")
-		end,
-	},
-	{
 		"ahmedkhalf/project.nvim",
 		config = function()
 			require("pride.config.project")
@@ -174,6 +160,27 @@ local plugins = {
 		config = function()
 			require("bqf")
 		end,
+	},
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			require("notify")
+		end,
+	},
+	{
+		"sainnhe/sonokai",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.sonokai_enable_italic = true
+			vim.g.sonokai_style = "andromeda"
+			vim.g.sonokai_better_performance = 1
+		end,
+	},
+	{
+		"wakatime/vim-wakatime",
 	},
 }
 
