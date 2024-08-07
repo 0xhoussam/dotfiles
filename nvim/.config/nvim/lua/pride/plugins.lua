@@ -1,10 +1,9 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 local plugins = {
 	{
-		"~/projects/fleet",
+		dir = "~/projects/fleet",
 		dev = true,
+		lazy = false,
+		priority = 1000,
 	},
 	"HiPhish/rainbow-delimiters.nvim",
 	"nvim-tree/nvim-web-devicons",
@@ -46,6 +45,7 @@ local plugins = {
 	},
 	{
 		"numToStr/Comment.nvim",
+		event = "BufRead",
 		config = function()
 			require("Comment").setup()
 		end,
@@ -54,6 +54,9 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.6",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("pride.config.telescope")
+		end,
 	},
 	{
 		"stevearc/dressing.nvim",
@@ -61,13 +64,14 @@ local plugins = {
 	},
 	{
 		"akinsho/bufferline.nvim",
+		event = "BufRead",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			require("pride.config.bufferline")
 		end,
 	},
 	{
-		"/hrsh7th/nvim-cmp",
+		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-buffer",
@@ -97,13 +101,18 @@ local plugins = {
 	},
 	{
 		"gelguy/wilder.nvim",
+		event = "CmdlineEnter",
 		config = function()
 			require("pride.config.wilder")
 		end,
 	},
 	{
 		"folke/todo-comments.nvim",
+		event = "BufRead",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("pride.config.todo-comments")
+		end,
 	},
 	{
 		"stevearc/conform.nvim",
@@ -127,17 +136,22 @@ local plugins = {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
+		event = "BufRead",
 		config = function()
 			require("gitsigns").setup()
 		end,
 	},
 	{
-		"LunarVim/breadcrumbs.nvim",
+		"utilyre/barbecue.nvim",
+		event = "LspAttach",
+		name = "barbecue",
+		version = "*",
 		dependencies = {
 			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
 		},
 		config = function()
-			require("pride.config.breadcrumbs")
+			require("barbecue").setup()
 		end,
 	},
 	{
@@ -146,14 +160,16 @@ local plugins = {
 			require("bufdelete")
 		end,
 	},
-	{
-		"nvimdev/dashboard-nvim",
-		event = "VimEnter",
-		config = function()
-			require("dashboard").setup()
-		end,
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	},
+	-- {
+	-- 	"MeanderingProgrammer/dashboard.nvim",
+	-- 	event = "VimEnter",
+	-- 	dependencies = {
+	-- 		{ "MaximilianLloyd/ascii.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
+	-- 	},
+	-- 	config = function()
+	-- 		require("pride.config.dashboard")
+	-- 	end,
+	-- },
 	{
 		"kevinhwang91/nvim-bqf",
 		ft = "qf",
@@ -168,19 +184,83 @@ local plugins = {
 		end,
 	},
 	{
-		"sainnhe/sonokai",
-		lazy = false,
-		priority = 1000,
+		"wakatime/vim-wakatime",
+	},
+	{
+		"chentoast/marks.nvim",
+		event = "BufRead",
 		config = function()
-			-- Optionally configure and load the colorscheme
-			-- directly inside the plugin declaration.
-			vim.g.sonokai_enable_italic = true
-			vim.g.sonokai_style = "andromeda"
-			vim.g.sonokai_better_performance = 1
+			require("marks").setup()
 		end,
 	},
 	{
-		"wakatime/vim-wakatime",
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("pride.config.dashboard")
+		end,
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-tree/nvim-web-devicons", "MaximilianLloyd/ascii.nvim" },
+	},
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	},
+	{
+		"nvim-treesitter/playground",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				playground = {
+					enable = true,
+					disable = {},
+					updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+					persist_queries = false, -- Whether the query persists across vim sessions
+					keybindings = {
+						toggle_query_editor = "o",
+						toggle_hl_groups = "i",
+						toggle_injected_languages = "t",
+						toggle_anonymous_nodes = "a",
+						toggle_language_display = "I",
+						focus_language = "f",
+						unfocus_language = "F",
+						update = "R",
+						goto_node = "<cr>",
+						show_help = "?",
+					},
+				},
+			})
+		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"f-person/git-blame.nvim",
+		config = function()
+			require("gitblame").setup({ enabled = false })
+		end,
+	},
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("pride.config.toggleterm")
+		end,
+	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false, -- Recommended
+		-- ft = "markdown" -- If you decide to lazy-load anyway
+
+		dependencies = {
+			-- You will not need this if you installed the
+			-- parsers manually
+			-- Or if the parsers are in your $RUNTIMEPATH
+			"nvim-treesitter/nvim-treesitter",
+
+			"nvim-tree/nvim-web-devicons",
+		},
 	},
 }
 

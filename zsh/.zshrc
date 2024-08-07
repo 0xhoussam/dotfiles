@@ -145,3 +145,18 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 eval "$(atuin init zsh)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+function change_tab_name() {
+    local title=$1
+    command nohup zellij action rename-tab $title >/dev/null 2>&1
+}
+
+function set_tab_to_command_line() {
+    local cmdline=$1
+    change_tab_name $cmdline
+}
+
+if [[ -n $ZELLIJ ]]; then
+    # add-zsh-hook precmd set_tab_to_working_dir
+    add-zsh-hook preexec set_tab_to_command_line
+fi

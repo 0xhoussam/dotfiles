@@ -170,7 +170,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -217,7 +217,7 @@ themes {
         fg "#d6d6dd"
         bg "#181818"
         red "#CC7C8A"
-        green "#1c71d8"
+        green "#afcb85"
         yellow "#e5c995"
         blue "#52a7f6"
         magenta "#d898d8"
@@ -239,12 +239,26 @@ themes {
         white "#9cdcfe"
         orange "#D65D0E"
     }
+
+    libadwaita {
+        fg "#fafafa"
+        bg "#1e1e1e"
+        black "#242424"
+        white "#ffffff"
+        red "#e01b24"
+        green "#2ec27e"
+        yellow "#e5a50a"
+        blue "#3584e4"
+        magenta "#9141ac"
+        cyan "#78d0bd"
+        orange "#efb080"
+    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "fleet"
+theme "libadwaita"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -254,7 +268,7 @@ theme "fleet"
 // Choose the mode that zellij uses when starting up.
 // Default: normal
 //
-// default_mode "locked"
+// default_mode "normal"
 
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could

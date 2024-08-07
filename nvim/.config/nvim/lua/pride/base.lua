@@ -2,14 +2,16 @@ local g = vim.g
 local o = vim.o
 local opt = vim.opt
 
-vim.cmd("syntax on")
+opt.linespace = 2
+
+-- vim.cmd("syntax on")
 vim.opt.cmdheight = 1
 vim.api.nvim_command("filetype plugin indent on")
 
 o.termguicolors = true
 o.background = "dark"
 vim.cmd.colorscheme("fleet")
-vim.o.guifont = "ZedMono Nerd Font:h17"
+vim.o.guifont = "ZedMono Nerd Font:h16"
 
 o.ph = 10
 o.pw = 2

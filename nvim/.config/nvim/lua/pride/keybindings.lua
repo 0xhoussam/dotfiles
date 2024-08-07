@@ -26,4 +26,10 @@ map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
 -- Telescope
 map("n", "<leader>f", "<Cmd>Telescope find_files<CR>", opts)
 map("n", "<leader>g", "<Cmd>Telescope live_grep<CR>", opts)
-map("n", "<leader>b", "<Cmd>Telescope buffers<CR>", opts)
+map("n", "<leader>s", "<Cmd>Telescope lsp_document_symbols<CR>", opts)
+map("n", "<leader>r", "<Cmd>Telescope registers<CR>", opts)
+
+-- Gitblame
+map("n", "<leader>b", "<Cmd>GitBlameToggle<CR>", opts)
+
+vim.api.nvim_set_keymap("n", "<leader><CR>", ":luafile $MYVIMRC<CR>", opts)

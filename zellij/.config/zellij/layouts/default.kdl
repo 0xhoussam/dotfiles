@@ -49,9 +49,9 @@ layout {
     children
     pane size=1 borderless=true {
         plugin location="file:/home/pride/.local/share/zellij/plugins/zjstatus.wasm" {
-            format_left  "#[fg=0,bg=10,bold]| {mode} |  {tabs}"
-            format_right "#[fg=0,bg=10]{datetime}"
-            format_space "#[bg=10]"
+            format_left  "#[fg=#2ec27e,bg=NONE,bold] {mode}  |  {tabs}"
+            format_right "#[fg=#fafafa,bg=NONE]{datetime}"
+            format_space "#[bg=NONE]"
 
             mode_normal        "{name}"
             mode_locked        "{name}"
@@ -70,8 +70,8 @@ layout {
 
             hide_frame_for_single_pane "true"
 
-            tab_normal   "{index}:{name}  "
-            tab_active   "#[fg=0,bg=10,bold]{index}:[{name}] "
+            tab_normal   "#[bg=NONE,fg=#fafafa]{index}:{name}    "
+            tab_active   "#[bg=NONE,fg=#fafafa,bold]*{index}:{name}    "
 
             datetime          " {format} "
             datetime_format   "%H:%M %d-%b-%y"

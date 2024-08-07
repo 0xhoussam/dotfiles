@@ -2,10 +2,10 @@ live_config_reload = true
 
 [colors.cursor]
 text = '#292929'
-cursor = '#1c71d8'
+cursor = '#52a7f6'
 
 [colors.primary]
-background= '#1e1e1e'
+background= '#181818'
 foreground= '#d6d6dd'
 
   # Bright colors

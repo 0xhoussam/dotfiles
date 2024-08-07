@@ -1,4 +1,0 @@
-#!/bin/bash
-
-export GTK_THEME='adw-gtk3-dark'
-# vi: ft=sh
