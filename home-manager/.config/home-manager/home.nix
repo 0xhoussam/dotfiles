@@ -1,10 +1,20 @@
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "pride";
   home.homeDirectory = "/home/pride";
+
+  imports = [
+    ./modules/alacritty.nix
+    ./modules/waybar.nix
+    ./modules/fish.nix
+    ./modules/flatpak.nix
+    ./modules/hyprland.nix
+  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -18,9 +28,48 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    btop
+    adw-gtk3
     bat
+    btop
+    blueman
     go
+    axel
+    bear
+    clang
+    gcc
+    hyprdim
+    #   docker eog
+    eza
+    eza
+    font-manager
+    gdb
+    gh
+    gnome.gnome-sound-recorder
+    gnome.nautilus
+    inetutils
+    llvm
+    lutris
+    man
+    mpv
+    neofetch
+    neovide
+    font-awesome
+    networkmanagerapplet
+    papirus-icon-theme
+    pavucontrol
+    polkit_gnome
+    qbittorrent
+    qemu
+    rar
+    strace
+    swayosd
+    swww
+    unzip
+    valgrind
+    vim
+    unstable.neovim
+    wget
+    wl-clipboard
     # anyrun
 
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -41,261 +90,7 @@
     # '')
   ];
 
-  programs = {
-    fish = {
-      enable = true;
-      interactiveShellInit = /*fish*/ "
-      set fish_greeting
-      ";
-      shellAbbrs = {
-        # git
-        g = "git";
-        gcl = "git clone";
-        gst = "git status";
-        ga = "git add";
-        gaa = "git add --all";
-        gm = "git commit";
-        gitconfig = "$EDITOR ~/.gitconfig";
-
-        bctl = "bluetoothctl";
-        m = "make -j (nproc)";
-        v = "nvim";
-        nv = "neovide";
-
-        hm = "home-manager";
-      };
-      shellAliases = {
-        ls = "eza --icons";
-      };
-
-      shellInit = /*fish*/ "
-		fish_add_path ~/.local/bin/
-		fish_add_path ~/.local/share/bob/nvim-bin/
-		fish_add_path ~/go/bin/
-		fish_add_path ~/projects/fish-lsp/bin
-
-		fish_vi_key_bindings
-
-		set fish_cursor_default block
-		set fish_cursor_insert line
-		set fish_cursor_replace_one underscore
-		set fish_cursor_visual line
-		set -g fish_vi_force_cursor 1
-
-		export GPG_TTY=$(tty)
-
-		function zellij_tab_name_update_pre --on-event fish_preexec
-			if set -q ZELLIJ
-				set title (string split ' ' $argv)[1]
-				command nohup zellij action rename-tab $title >/dev/null 2>&1
-			end
-		end
-
-		function zellij_tab_name_update_post --on-event fish_postexec
-			if set -q ZELLIJ
-				command nohup zellij action rename-tab (basename $SHELL) >/dev/null 2>&1
-			end
-		end
-
-	  ";
-
-    };
-
-    # anyrun = {
-    #   enable = true;
-    #   config = {
-    #     plugins = [
-    #       # An array of all the plugins you want, which either can be paths to the .so files, or their packages
-    #       #inputs.anyrun.packages.${pkgs.system}.applications
-    #       # ./some_plugin.so
-    #       #"${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/kidex"
-    #     ];
-    #     x = { fraction = 0.5; };
-    #     y = { fraction = 0.3; };
-    #     width = { fraction = 0.3; };
-    #     hideIcons = false;
-    #     ignoreExclusiveZones = false;
-    #     layer = "overlay";
-    #     hidePluginInfo = false;
-    #     closeOnClick = false;
-    #     showResultsImmediately = false;
-    #     maxEntries = null;
-    #   };
-    #   extraCss = /*css*/''
-    #   '';
-    #
-    #   # extraConfigFiles."some-plugin.ron".text = ''
-    #   #   Config(
-    #   #     // for any other plugin
-    #   #     // this file will be put in ~/.config/anyrun/some-plugin.ron
-    #   #     // refer to docs of xdg.configFile for available options
-    #   #   )
-    #   # '';
-    # };
-
-    waybar = {
-      enable = true;
-      systemd.enable = true;
-      settings = [{
-        height = 35; # Waybar height (to be removed for auto height)
-        spacing = 4; # Gaps between modules (4px)
-        modules-left = [ "custom/logo" "hyprland/workspaces" ];
-        modules-center = [ "clock" ];
-        modules-right = [ "cpu" "backlight" "pulseaudio" "tray" ];
-        tray = {
-          spacing = 16;
-        };
-
-        clock = {
-          format = "{:%d %b   %H:%M}";
-          tooltip = false;
-        };
-
-
-        pulseaudio = {
-          format = "{volume}% {icon}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-icons = {
-            car = "";
-            default = [ "" "" "" ];
-            handsfree = "";
-            headphones = "";
-            headset = "";
-            phone = "";
-            portable = "";
-          };
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
-          on-click = "pavucontrol";
-
-        };
-
-        backlight = {
-          device = "intel_backlight";
-          format = "{percent}%  {icon}";
-          format-icons = [ "" ];
-        };
-
-        "hyprland/workspaces" = {
-          format = "{name}";
-          on-click = "activate";
-        };
-
-        cpu = {
-          format = "{usage}% ";
-          tooltip = false;
-          on-click = "flatpak run net.nokyan.Resources";
-        };
-
-        "custom/logo" = {
-          format = "󰣇";
-          tooltip = false;
-        };
-      }];
-
-      style = /*css*/ ''
-        * {
-          font-family:
-            IBM Plex Sans Condensed,
-            FontAwesome,
-            Noto Sans,
-            sans-serif;
-          font-size: 14px;
-        }
-
-        window#waybar {
-          background-color: #1e1e1e;
-          color: #f4f4f4;
-          transition-property: background-color;
-          transition-duration: 0.5s;
-        }
-
-        window#waybar.hidden {
-          opacity: 0.2;
-        }
-
-        #workspaces {
-          margin: 0;
-          padding: 0;
-          background-color: #383838;
-          margin: 4px 0;
-          border-radius: 10px;
-        }
-
-        #workspaces button.active {
-          background-color: #3584e4;
-          color: #f4f4f4;
-          border-radius: 10px;
-        }
-
-        /* If workspaces is the leftmost module, omit left margin */
-        .modules-left > widget:first-child > #workspaces {
-          margin-left: 0;
-        }
-
-        .modules-right {
-          background-color: #383838;
-          border-radius: 10px;
-          margin: 4px 0;
-          padding: 0px 10px;
-        }
-
-        /* If workspaces is the rightmost module, omit right margin */
-        .modules-right > widget:last-child > #workspaces {
-          margin-right: 0;
-        }
-
-        @keyframes blink {
-          to {
-            background-color: #ffffff;
-            color: #000000;
-          }
-        }
-
-        #tray > .passive {
-          -gtk-icon-effect: dim;
-        }
-
-        #tray > .needs-attention {
-          -gtk-icon-effect: highlight;
-          background-color: #c01c28;
-        }
-
-        #clock {
-          padding-right: 10px;
-          margin-right: 10px;
-          font-weight: bold;
-        }
-
-        #pulseaudio {
-          padding-right: 10px;
-          margin-right: 10px;
-        }
-
-        #backlight {
-          padding-right: 10px;
-          margin-right: 10px;
-        }
-
-        #cpu {
-          padding-right: 10px;
-          margin-right: 10px;
-        }
-
-        #custom-logo {
-          font-size: 25px;
-          margin-right: 25px;
-          padding-left: 10px;
-        }
-
-        #tray {
-          padding-right: 5px;
-        }
-      '';
-    };
-  };
+  # programs = { };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
