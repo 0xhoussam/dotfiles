@@ -1,0 +1,188 @@
+{ pkgs, ... }:
+{
+  programs.alacritty = {
+    enable = true;
+
+    settings = {
+      live_config_reload = true;
+
+      colors = {
+        cursor = {
+          text = "#292929";
+          cursor = "#52a7f6";
+        };
+
+        primary = {
+          background = "#181818";
+          foreground = "#d6d6dd";
+        };
+
+        bright = {
+          black = "#292929";
+          red = "#CC7C8A";
+          green = "#afcb85";
+          yellow = "#e5c995";
+          blue = "#52a7f6";
+          magenta = "#a390f0";
+          cyan = "#78d0bd";
+          white = "#d6d6dd";
+        };
+
+        normal = {
+          black = "#292929";
+          red = "#CC7C8A";
+          green = "#afcb85";
+          yellow = "#e5c995";
+          blue = "#52a7f6";
+          magenta = "#a390f0";
+          cyan = "#78d0bd";
+          white = "#d6d6dd";
+        };
+
+        selection = {
+          text = "#292929";
+          background = "#767676";
+        };
+      };
+
+      cursor = {
+        style = "Beam";
+      };
+
+      env = {
+        TERM = "xterm-256color";
+      };
+
+      font = {
+        size = 12.0;
+
+        bold = {
+          family = "ZedMono Nerd Font";
+          style = "Bold";
+        };
+
+        bold_italic = {
+          family = "ZedMono Nerd Font";
+          style = "Bolditalic";
+        };
+
+        italic = {
+          family = "ZedMono Nerd Font";
+          style = "Italic";
+        };
+
+        normal = {
+          family = "ZedMono Nerd Font";
+          style = "Regular";
+        };
+      };
+
+      shell = {
+        args = [ "--login" ];
+        program = "/usr/bin/fish";
+      };
+
+      window = {
+        opacity = 1;
+        startup_mode = "Windowed";
+        title = "Alacritty";
+        decorations = "None";
+
+        padding = {
+          x = 10;
+          y = 1;
+        };
+      };
+
+      keyboard = {
+        bindings = [
+          {
+            key = "F11";
+            action = "ToggleFullscreen";
+          }
+        ];
+      };
+    };
+    # settings = /*toml*/ ''
+    #   live_config_reload = true
+    #
+    #   [colors.cursor]
+    #   text = '#292929'
+    #   cursor = '#52a7f6'
+    #
+    #   [colors.primary]
+    #   background= '#181818'
+    #   foreground= '#d6d6dd'
+    #
+    #     # Bright colors
+    #   [colors.bright]
+    #   black = '#292929'
+    #   red = '#CC7C8A'
+    #   green = '#afcb85'
+    #   yellow = '#e5c995'
+    #   blue = '#52a7f6'
+    #   magenta = '#a390f0'
+    #   cyan = '#78d0bd'
+    #   white = '#d6d6dd'
+    #
+    #     # Normal colors
+    #   [colors.normal]
+    #   black = '#292929'
+    #   red = '#CC7C8A'
+    #   green = '#afcb85'
+    #   yellow = '#e5c995'
+    #   blue = '#52a7f6'
+    #   magenta = '#a390f0'
+    #   cyan = '#78d0bd'
+    #   white = '#d6d6dd'
+    #
+    #   [colors.selection]
+    #   text= '#292929'
+    #   background= '#767676'
+    #
+    #   [cursor.style]
+    #   shape = "Beam"
+    #
+    #   [env]
+    #   TERM = "xterm-256color"
+    #
+    #   [font]
+    #   size = 12.0
+    #
+    #   [font.bold]
+    #   family = "ZedMono Nerd Font"
+    #   style = "Bold"
+    #
+    #   [font.bold_italic]
+    #   family = "ZedMono Nerd Font"
+    #   style = "Bolditalic"
+    #
+    #   [font.italic]
+    #   family = "ZedMono Nerd Font"
+    #   style = "Italic"
+    #
+    #   [font.normal]
+    #   family = "ZedMono Nerd Font"
+    #   style = "Regular"
+    #
+    #   [shell]
+    #   args = ["--login"]
+    #   program = "/usr/bin/fish"
+    #
+    #   [window]
+    #   opacity = 1
+    #   startup_mode = "Windowed"
+    #   title = "Alacritty"
+    #   decorations = "None"
+    #
+    #   [window.padding]
+    #   x = 10
+    #   y = 1
+    #
+    #   [keyboard]
+    #   bindings = [
+    #     { key = "F11", action = "ToggleFullscreen" }
+    #   ]
+    # '';
+  };
+}

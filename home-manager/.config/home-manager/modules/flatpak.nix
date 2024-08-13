@@ -1,0 +1,55 @@
+{ pkgs }:
+{
+  services.flatpak = {
+    enable = true;
+    packages = [
+      { appId = "com.brave.Browser"; origin = "flathub"; }
+      "com.github.flxzt.rnote"
+      "com.github.rafostar.Clapper"
+      "com.github.tchx84.Flatseal"
+      "com.raggesilver.BlackBox"
+      "com.toolstack.Folio"
+      "com.usebottles.bottles"
+      "info.febvre.Komikku"
+      "io.github.alainm23.planify"
+      "io.github.mrvladus.List"
+      "io.gitlab.news_flash.NewsFlash"
+      "io.missioncenter.MissionCenter"
+      "md.obsidian.Obsidian"
+      "net.nokyan.Resources"
+      "org.freedesktop.Platform"
+      "org.freedesktop.Platform.GL.default"
+      "org.freedesktop.Platform.GL.default"
+      "org.freedesktop.Platform.GL.default"
+      "org.freedesktop.Platform.GL.default"
+      "org.freedesktop.Platform.GL32.default"
+      "org.freedesktop.Platform.VAAPI.Intel"
+      "org.freedesktop.Platform.VAAPI.Intel"
+      "org.freedesktop.Platform.ffmpeg-full"
+      "org.freedesktop.Platform.ffmpeg_full.i386"
+      "org.freedesktop.Platform.openh264"
+      "org.freedesktop.Platform.openh264"
+      "org.gnome.Calculator"
+      "org.gnome.Calendar"
+      "org.gnome.Loupe"
+      "org.gnome.Loupe.HEIC"
+      "org.gnome.Platform"
+      "org.gnome.Platform"
+      "org.gnome.Platform.Compat.i386"
+      "org.gnome.Platform.Compat.i386"
+      "org.gnome.Snapshot"
+      "org.gnome.TextEditor"
+      "org.gnome.baobab"
+      "org.gtk.Gtk3theme.adw-gtk3"
+      "org.gtk.Gtk3theme.adw-gtk3-dark"
+      "org.inkscape.Inkscape"
+      "org.mozilla.Thunderbird"
+      "org.nickvision.tubeconverter"
+      "org.winehq.Wine.DLLs.dxvk"
+      "org.winehq.Wine.gecko"
+      "org.winehq.Wine.mono"
+      "us.zoom.Zoom"
+
+    ];
+  };
+}
