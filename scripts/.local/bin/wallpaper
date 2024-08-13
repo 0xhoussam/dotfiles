@@ -1,6 +1,0 @@
-#!/usr/bin/fish
-
-set wallpaper_dir $HOME/Pictures/wallpapers/live
-set random_file (find $wallpaper_dir -type f -follow | shuf -n 1)
-
-swww img --transition-type wipe --transition-angle 30 --transition-step 90 $random_file
